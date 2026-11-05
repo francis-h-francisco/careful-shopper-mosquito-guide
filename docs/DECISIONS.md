@@ -30,3 +30,17 @@
 
 | 2026-11-06 | Use WordPress.org Twenty Twenty-Five as the parent theme and a Careful Shopper child theme for the Playground preview. | User asked to retain Twenty Twenty-Five if possible; MHTML is the visual reference. |
 | 2026-11-06 | Disable automatic WordPress admin login in the Playground Blueprint. | Intended reviewer path is a front-end preview, not an admin session. |
+
+
+## 2026-11-06 — Explicit topic/design correction
+
+The user explicitly corrected the assistant: the requested project is the mosquito-protection blog, not bicycle security. Keep the original mosquito topic and source-driven design. Do not change the topic or redesign the page based on an ambiguous interpretation of employer wording. The user requested targeted fixes to images, navigation, mobile menu, content accuracy, unnecessary explanatory text and card breakpoints while preserving what already looks right.
+
+## 2026-11-06 — Responsive/media repair choices
+
+- Use the supplied mosquito-bite WebP already embedded in the static guide. For Playground, write the same bytes into the local uploads directory and use the generated media URL so WordPress does not have to preserve a `data:` URL in post content.
+- Use a no-wrap desktop nav and switch to the Menu control at 55rem to prevent the last item from dropping to a second row.
+- Enqueue a dedicated child-theme menu script; do not rely on a button with no event handler.
+- Match the source card rules: three per desktop row, one per phone row, with an optional two-column intermediate tablet layout. Stack the three layer cards below 40rem.
+- Remove the hero's extra preview CTA and the public footer note explaining internal link gaps; keep the standalone Playground launcher separate.
+- Runtime and browser checks remain open until actually tested.
