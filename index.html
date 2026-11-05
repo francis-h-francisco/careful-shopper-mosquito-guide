@@ -7,8 +7,7 @@
 <meta name="description" content="A practical guide to mosquito barriers, repellents and bite relief. Learn how protection layers work together.">
 <title>Keep Mosquitoes From Biting: Barrier Nets and Screens for Every Space | Careful Shopper</title>
 <style>
-
-:root{font-family:Verdana,Geneva,Arial,sans-serif;color:#0F1111;background:#FFFFFF;line-height:1.6}
+:root{font-family:Verdana,Geneva,Arial,sans-serif;color:#0F1111;background:#FFFFFF;font-size:16px;line-height:1.6}
 *{box-sizing:border-box}
 html{scroll-behavior:auto}
 body{margin:0;background:#FFFFFF;color:#0F1111;font-family:Verdana,Geneva,Arial,sans-serif;font-size:1rem;line-height:1.6}
@@ -16,13 +15,13 @@ a{color:#0033FF;font-weight:700;text-decoration:underline;text-underline-offset:
 a:focus-visible,button:focus-visible{outline:.2rem solid #0033FF;outline-offset:.2rem}
 .preview-link{margin:1.25rem 0 0}.preview-link a{display:inline-flex;align-items:center;min-height:3rem;padding:.75rem 1.1rem;border-radius:.55rem;background:#B78B2E;color:#14251C;font-weight:700;text-decoration:none}.preview-link a:hover{background:#d0a84f}
 .site-header{background:#FFFFFF;border-bottom:.125rem solid #DDDDDD;padding:1rem}
-.header-inner{max-width:60rem;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:nowrap}
+.header-inner{max-width:60rem;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .brand{display:flex;align-items:center;gap:.75rem;min-width:12rem;color:#006633;text-decoration:none}
 .brand-mark{width:3rem;height:3rem;border:.18rem solid #006633;border-radius:50%;display:grid;place-items:center;flex:0 0 3rem;font-size:1.2rem;font-weight:700;line-height:1}
 .brand-copy{display:flex;flex-direction:column;line-height:1.25}
 .brand-name{font-size:1.4rem;font-weight:700;color:#006633}
 .tagline{font-size:1rem;color:#0F1111}
-.desktop-nav{display:flex;align-items:center;gap:1.5rem;flex-wrap:nowrap;white-space:nowrap}
+.desktop-nav{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .desktop-nav a{font-size:1rem}
 .nav-unavailable{font-size:1rem;font-weight:700;text-decoration:underline;text-underline-offset:.12em;color:#0033FF}
 .menu-button{display:none;min-height:3rem;padding:.75rem 1rem;border:0;border-radius:.5rem;background:#663300;color:#FFFFFF;font:700 1rem Verdana,Geneva,Arial,sans-serif}
@@ -77,10 +76,6 @@ th{font-weight:700;background:#FFFFFF;color:#000000}
 .footer-nav a,.footer-nav .nav-unavailable{color:#FFFFFF;font-size:1rem}
 .footer-note{margin:.75rem 0 0;padding-top:.75rem;border-top:.0625rem solid #FFFFFF}
 .copyright{margin:1rem 0 0}
-@media(max-width:55rem){
- .desktop-nav{display:none}
- .menu-button{display:inline-flex;align-items:center;justify-content:center}
-}
 @media(max-width:40rem){
  .header-inner{align-items:center}
  .desktop-nav{display:none}
@@ -97,9 +92,9 @@ th{font-weight:700;background:#FFFFFF;color:#000000}
  .footer-nav{flex-direction:column;gap:.75rem}
 }
 @media(min-width:40.01rem) and (max-width:55rem){
+ .desktop-nav{gap:.75rem}
  .product-grid{grid-template-columns:repeat(2,minmax(0,12rem))}
 }
-
 </style>
 </head>
 <body id="top">
@@ -128,7 +123,8 @@ th{font-weight:700;background:#FFFFFF;color:#000000}
   <h1>Keep Mosquitoes From Biting: Barrier Nets and Screens for Every Space</h1>
   <p class="byline">By Mrs. Shopper.</p>
   <p class="short-answer"><strong>Short answer:</strong> Stop mosquitoes with physical barriers, reduce them around your home, and keep bite relief on hand. This page covers the first layer: nets and screens that keep mosquitoes out.</p>
-  </section>
+  <p class="preview-link"><a href="./playground.html">Open the WordPress preview</a></p>
+ </section>
  <section class="zone disclosure" aria-label="Affiliate disclosure">
   Mrs. Shopper explains: I put affiliate sales links on this website. If you buy any products using these links, I may earn a small commission at no extra cost to you. As an Amazon Associate, I earn from qualifying purchases.
  </section>
@@ -280,7 +276,7 @@ th{font-weight:700;background:#FFFFFF;color:#000000}
  </section>
  <section class="zone footer-zone" id="curated" aria-labelledby="curated-title">
   <h2 id="curated-title">Curated by Mrs. Shopper</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae justo sed urna commodo aliquet. Donec at sapien non neque posuere tincidunt. Vivamus consequat, erat sed facilisis luctus, magna sem interdum arcu, sed suscipit nibh sapien vitae lorem. Praesent elementum, nibh sed tempor varius, risus nulla blandit sapien, sed luctus magna neque id augue.</p>
+  <p>Mrs. Shopper brings products together by looking at practical use, fit and the way each choice supports the next. The goal is a clearer decision, not a longer shopping list.</p>
   <p>Careful Shopper accepts no sponsorships from manufacturers or brands.</p>
   <nav class="footer-nav" aria-label="Footer navigation">
    <a href="#curated">About Mrs. Shopper</a>
@@ -293,32 +289,19 @@ th{font-weight:700;background:#FFFFFF;color:#000000}
  </section>
 </main>
 <script>
-(() => {
- const menuButton = document.getElementById('menuButton');
- const mobileNav = document.getElementById('mobileNav');
- if (!menuButton || !mobileNav) return;
- const closeMenu = () => {
+const menuButton=document.getElementById('menuButton');
+const mobileNav=document.getElementById('mobileNav');
+menuButton.addEventListener('click',()=>{
+ const open=menuButton.getAttribute('aria-expanded')==='true';
+ menuButton.setAttribute('aria-expanded',String(!open));
+ mobileNav.classList.toggle('open',!open);
+});
+mobileNav.addEventListener('click',event=>{
+ if(event.target.closest('a')){
   mobileNav.classList.remove('open');
-  menuButton.setAttribute('aria-expanded', 'false');
- };
- menuButton.addEventListener('click', () => {
-  const open = menuButton.getAttribute('aria-expanded') !== 'true';
-  menuButton.setAttribute('aria-expanded', String(open));
-  mobileNav.classList.toggle('open', open);
- });
- mobileNav.addEventListener('click', event => {
-  if (event.target.closest('a')) closeMenu();
- });
- document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
-   closeMenu();
-   menuButton.focus();
-  }
- });
- document.addEventListener('click', event => {
-  if (!mobileNav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
- });
-})();
+  menuButton.setAttribute('aria-expanded','false');
+ }
+});
 </script>
 </body>
 </html>
