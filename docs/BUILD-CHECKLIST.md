@@ -14,7 +14,7 @@
 - [ ] Configure GitHub Pages to use GitHub Actions if required.
 - [ ] Confirm Actions deployment succeeds and identify the actual Pages URL.
 - [ ] In a clean browser, confirm WordPress Playground starts from the Pages URL without a local server.
-- [ ] Confirm the Blueprint-created “Playground Import Check” page appears.
+- [ ] Confirm the Blueprint imports the nine-zone guide as the WordPress front page.
 - [ ] Reload in a clean/private session and repeat startup.
 - [ ] Repeat in a second browser or device if available.
 - [ ] Record startup time, browser/device and any errors. Do not claim success before observation.
