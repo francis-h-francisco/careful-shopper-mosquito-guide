@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#006633">
+  <title>WordPress Playground Test — Careful Shopper</title>
+  <style>
+    :root { font-family: Verdana, Geneva, Arial, sans-serif; color: #0f1111; background: #fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.6; }
+    header { padding: 1rem; border-bottom: .125rem solid #ddd; }
+    header a { color: #006633; font-weight: 700; }
+    main { width: min(75rem, calc(100% - 2rem)); margin: 1.5rem auto; }
+    h1 { color: #006633; font-size: 1.4rem; }
+    .notice { padding: 1rem 1.25rem; background: #fdf6d8; border: .125rem solid #cc9900; border-radius: .75rem; }
+    #status { padding: .75rem 1rem; margin: 1rem 0; border: .0625rem solid #ddd; border-radius: .5rem; }
+    #playground { display: block; width: 100%; min-height: 44rem; border: .125rem solid #006633; border-radius: .75rem; background: #f6f2ea; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: .75rem 1rem; background: #663300; color: #fff; border-radius: .5rem; font-weight: 700; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: .2rem solid #0033ff; outline-offset: .2rem; }
+    code { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <header><a href="./">← Careful Shopper test home</a></header>
+  <main>
+    <h1>WordPress Playground startup and content-import test</h1>
+    <p class="notice"><strong>Experimental:</strong> the WordPress runtime is provided by the official WordPress Playground service. Every visitor gets an isolated browser-side WordPress instance. Do not enter personal or confidential information.</p>
+    <p id="status" role="status" aria-live="polite">Waiting to start WordPress Playground…</p>
+    <p><a class="button" href="https://playground.wordpress.net/" target="_blank" rel="noopener noreferrer">Open official Playground separately</a></p>
+    <iframe id="playground" title="WordPress Playground test instance" loading="eager"></iframe>
+    <p>If the frame stays blank or reports an error, copy the status message and tell Francis/ChatGPT what browser and device you used.</p>
+  </main>
+  <script type="module">
+    const status = document.getElementById('status');
+    const frame = document.getElementById('playground');
+
+    function report(message) {
+      status.textContent = message;
+    }
+
+    async function start() {
+      try {
+        report('Loading the WordPress Playground client…');
+        const [{ startPlaygroundWeb }, blueprintResponse] = await Promise.all([
+          import('https://playground.wordpress.net/client/index.js'),
+          fetch('./blueprint.json', { cache: 'no-store' })
+        ]);
+
+        if (!blueprintResponse.ok) {
+          throw new Error('Could not load blueprint.json (HTTP ' + blueprintResponse.status + ').');
+        }
+        const blueprint = await blueprintResponse.json();
+
+        report('Starting WordPress and importing the sample page. The first load can take several minutes.');
+        const client = await startPlaygroundWeb({
+          iframe: frame,
+          remoteUrl: 'https://playground.wordpress.net/remote.html',
+          blueprint
+        });
+
+        await client.isReady();
+        report('WordPress Playground is ready. Check that the page titled “Playground Import Check” appears in the frame. This confirms the prepared content was imported.');
+      } catch (error) {
+        console.error(error);
+        report('Playground startup failed: ' + (error && error.message ? error.message : String(error)));
+      }
+    }
+
+    start();
+  </script>
+</body>
+</html>
