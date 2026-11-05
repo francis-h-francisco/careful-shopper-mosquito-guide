@@ -10,7 +10,7 @@ The latest employer direction is to use **SEE EXAMPLE** on Amazon product links�
 
 ## Current status
 
-**Initial Playground proof-of-concept code committed; Pages deployment and browser startup/import are not yet verified.**
+**Static guide and updated Twenty Twenty-Five child-theme Blueprint are committed; Pages deployment and real-browser Playground startup/import are not yet verified.**
 
 - [x] Public repository and source-reconciled documentation scaffold.
 - [x] User authorized selecting six Zone 7 example destinations.
@@ -22,7 +22,7 @@ The latest employer direction is to use **SEE EXAMPLE** on Amazon product links�
 - [ ] Repeat startup and test a second browser/device.
 - [ ] Select and validate six Zone 7 example destinations.
 - [ ] Resolve authorized footer destinations; source provides labels but not URLs.
-- [ ] Build the complete nine-zone guide after the runtime gate passes.
+- [x] Import the existing nine-zone guide as the Playground front page in the Blueprint.
 - [ ] Test responsive layout, accessibility, links, and cache/update behavior.
 - [ ] Publish and verify a review URL before sharing it.
 
@@ -38,7 +38,7 @@ If the official remote runtime or import flow proves unsuitable, the user has au
 
 - `index.html` — static project entry page.
 - `playground.html` — Playground startup/import test harness.
-- `blueprint.json` — prepared WordPress setup and import check page.
+- `blueprint.json` — installs Twenty Twenty-Five, activates the Careful Shopper child theme and imports the guide as the front page.
 - `docs/PLAYGROUND-POC.md` — technical spike and acceptance criteria.
 - `QUICKSTART.md` — contributor setup.
 - `docs/PROJECT-BRIEF.md` — scope, editorial direction and constraints.
