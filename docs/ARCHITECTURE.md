@@ -48,3 +48,16 @@ The user authorizes conventional shared WordPress hosting if Pages + Playground 
 Do not claim a working Playground-on-Pages site until a first-time visitor can start it from HTTPS without a local server, prepared content loads, a clean browser can repeat startup, isolation is documented, responsive/accessibility checks pass, and a later release can be verified at the same URL.
 
 If this route proves unreliable, use the authorized conventional WordPress-hosting fallback and document the technical reason.
+## 2026-11-06 — Public guide and Playground separation
+
+index.html is now the nine-zone public static guide served by GitHub Pages. User reports this URL is live: https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/
+
+GitHub Pages serves static HTML/CSS/JS. The public guide does not rely on a shared WordPress database.
+
+playground.html loads the official Playground client and blueprint.json. The current Blueprint creates a disposable “Playground Import Check” page. Playground is browser-side and isolated per visitor; it is not a shared PHP/MySQL server. Startup/import and clean-browser repeatability remain unverified.
+
+The static guide is the public reader experience. Playground is a separate technical sandbox for testing WordPress authoring/import behavior. Do not describe the site as WordPress-powered until runtime and full guide import are validated.
+
+The guide follows the supplied nine-zone sequence and Style Sheet, uses the supplied mosquito-bite image, excludes the flea photo, and uses text-only product-window placeholders. Zone 7 links currently lead to Amazon category searches, explicitly marked as test destinations; they are not confirmed individual listings or affiliate tracking. Zone 8 uses the five source-provided example links.
+
+Acceptance: user browser checks at desktop and 22.5rem mobile, keyboard/200% zoom/accessibility, Playground startup/import, verified Zone 7 individual product destinations and authorized footer/nav URLs.
