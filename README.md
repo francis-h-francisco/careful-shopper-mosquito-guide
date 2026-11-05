@@ -84,3 +84,14 @@ The user explicitly confirmed that this remains the **mosquito-protection assign
 - Removed the extra Playground link from the nine-zone hero and the internal explanatory footer note. The separate Playground launcher is now minimal.
 
 **Still unverified:** GitHub Pages deployment propagation, image rendering in a real browser, Playground startup/import, mobile tap behavior, keyboard/200% zoom and desktop/phone visual QA. Do not claim these passed until observed.
+
+
+## 2026-11-06 — MHTML photo and Playground mobile-menu repair
+
+The user reported that the education image still did not appear like the MHTML reference and that the mobile Menu control was inert. Readback of the live source identified two separate issues: the static page embedded a different small skin-only WebP rather than the MHTML's mosquito-on-skin photograph; the Playground importer cached the old image URL and its v3 one-time guard would skip an updated import; and the Playground child theme enqueued CSS but no JavaScript for the Menu button. The static index already had an inline click handler, but the imported WordPress page did not.
+
+- Replaced the static index.html image with an optimized 320×213 JPEG derived from the MHTML's embedded Pexels photograph. Updated alt text and credit to Photo: Anuj / Pexels. New commit: a21c40108379e7e3a718bf585d1f1f4ab4fd1518; verified blob: 52a8d950aa86f90147dd8c4b5bb9ec9b0348eba6.
+- Updated blueprint.json to upload the same JPEG to Playground uploads, use a fresh image-option key, and advance the import guard to v4 so existing v3 instances can receive the correction. Added child-theme menu.js and enqueued it from functions.php; it toggles the mobile nav, closes after a link, closes on outside click and Escape, and returns focus to Menu. New commit: 0c3e8151f709525537b2ffb34ceb59cb2c8079bd; verified blob: eae60bbbdd92573440a5fcc2a63eace735ed124a.
+- Readback verified the embedded JPEG data (5,892 base64 characters) and its rendered preview, updated attribution/alt text, v4 import guard, new image option key, menu.js, and its enqueue call. This is source-level verification only.
+- Not verified: live GitHub Pages propagation, actual image rendering in a clean browser, Playground upload/import success, or real mobile tap behavior. Direct web retrieval of the live Pages and WordPress URLs was inaccessible. Do not claim browser QA passed.
+- Next: reload the deployed static page and rerun the updated Blueprint in a fresh Playground session; test the photo and Menu on desktop and a phone-width viewport. No screenshot or employer submission/reply was sent.
