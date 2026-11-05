@@ -61,3 +61,9 @@ The static guide is the public reader experience. Playground is a separate techn
 The guide follows the supplied nine-zone sequence and Style Sheet, uses the supplied mosquito-bite image, excludes the flea photo, and uses text-only product-window placeholders. Zone 7 links currently lead to Amazon category searches, explicitly marked as test destinations; they are not confirmed individual listings or affiliate tracking. Zone 8 uses the five source-provided example links.
 
 Acceptance: user browser checks at desktop and 22.5rem mobile, keyboard/200% zoom/accessibility, Playground startup/import, verified Zone 7 individual product destinations and authorized footer/nav URLs.
+
+## 2026-11-06 — Twenty Twenty-Five child-theme direction
+
+The Blueprint now installs the WordPress.org `twentytwentyfive` theme and activates a Careful Shopper child theme. The child theme keeps the guide-specific templates and imports the source guide content; its stylesheet translates the supplied MHTML's ivory/forest-green/gold palette, 1120px editorial width, rounded panels and muted text into the current nine-zone layout.
+
+The Blueprint disables automatic login (`login: false`). This removes the previous automatic admin-login step from the intended visitor flow. It does not make the Playground service a shared WordPress host: every visitor still receives an isolated browser instance. The Pages launcher and raw Blueprint URL have been updated in source, but runtime startup, theme installation, front-page rendering, CORS, clean-session repeatability and visitor-facing admin visibility remain unverified until real-browser testing.
