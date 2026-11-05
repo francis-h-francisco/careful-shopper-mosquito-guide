@@ -41,3 +41,28 @@
 8. Capture the requested screenshot and share a review URL only after checking it.
 
 Do not invent destinations, product claims, biography facts, affiliate status, photo rights or shared database behavior. Remove all internal placeholders before final review.
+## 2026-11-06 — Public guide implementation
+
+- [x] Nine-zone public guide implemented in index.html in source order.
+- [x] Verdana typography, specified palette, rounded zones, 60rem content width and source heading/body sizes.
+- [x] Header text mark, nav labels and responsive Menu control.
+- [x] Hero copy and breadcrumb reproduced from MosquitoBlog.
+- [x] Exact affiliate disclosure after hero and repeated immediately above both product groups.
+- [x] Zone 4 education text reproduced; supplied mosquito-bite photo at 16:9 with Dreamstime_216036901 credit; flea photo excluded.
+- [x] Zone 5 controlling layer copy; Zone 6 comparison table; six Zone 7 categories; five Zone 8 products; Zone 9 lorem ipsum bio and footer labels.
+- [x] Product windows 16:10; same destination as each CTA; links open new tabs; card width constrained below desktop photo width.
+- [x] Mobile one-column cards/layers, stacked navigation and table-only horizontal scrolling.
+
+## Real-browser QA still required
+- [ ] User visual check at desktop and 22.5rem phone width.
+- [ ] Confirm photo displays/crop, disclosure wraps, menu works and no page-level horizontal overflow.
+- [ ] Keyboard navigation, focus visibility and 200% zoom.
+- [ ] Playground startup and Blueprint import at /playground.html.
+- [ ] Capture final screenshot after QA.
+
+## Open items
+- [ ] Zone 7 currently uses Amazon category-search links, not verified individual product pages. Select/verify one suitable destination per category before employer review.
+- [ ] Footer and Shopping Index/Contact nav destinations were not supplied; flagged rather than invented.
+- [ ] Zone 7 destinations are not confirmed affiliate-tracked links; test-only status is disclosed.
+- [ ] Playground is isolated per visitor and not a shared production WordPress backend.
+- [ ] No screenshot or employer submission; nothing sent to Eve.
