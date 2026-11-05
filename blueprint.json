@@ -1,0 +1,25 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "login",
+      "username": "admin"
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Careful Shopper — Playground Import Check",
+        "blogdescription": "An isolated WordPress Playground test site"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php'; $page_id = wp_insert_post(array('post_title' => 'Playground Import Check', 'post_name' => 'playground-import-check', 'post_status' => 'publish', 'post_type' => 'page', 'post_content' => '<h1>Prepared content loaded</h1><p>If you can read this page, the GitHub Pages shell successfully started WordPress Playground and the Blueprint created this WordPress page.</p><p>This is a disposable technical test. It is not the final mosquito guide.</p>')); if (!is_wp_error($page_id) && $page_id) { update_option('show_on_front', 'page'); update_option('page_on_front', $page_id); } ?>"
+    }
+  ]
+}
