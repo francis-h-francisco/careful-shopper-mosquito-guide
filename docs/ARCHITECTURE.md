@@ -67,3 +67,16 @@ Acceptance: user browser checks at desktop and 22.5rem mobile, keyboard/200% zoo
 The Blueprint now installs the WordPress.org `twentytwentyfive` theme and activates a Careful Shopper child theme. The child theme keeps the guide-specific templates and imports the source guide content; its stylesheet translates the supplied MHTML's ivory/forest-green/gold palette, 1120px editorial width, rounded panels and muted text into the current nine-zone layout.
 
 The Blueprint disables automatic login (`login: false`). This removes the previous automatic admin-login step from the intended visitor flow. It does not make the Playground service a shared WordPress host: every visitor still receives an isolated browser instance. The Pages launcher and raw Blueprint URL have been updated in source, but runtime startup, theme installation, front-page rendering, CORS, clean-session repeatability and visitor-facing admin visibility remain unverified until real-browser testing.
+
+
+## 2026-11-06 — Responsive and media repair
+
+The public static guide and Playground preview share the source-specified nine-zone layout. The static page retains the supplied mosquito-bite WebP as an embedded image. The Playground importer extracts that same image data into the visitor's local Playground uploads directory with `wp_upload_bits()`, then inserts the resulting ordinary uploads URL into the page. This avoids WordPress post-content sanitization of a `data:` image URL.
+
+The child theme now enqueues `menu.js`. The script opens/closes the mobile menu, closes after link selection or outside click, and closes on Escape while returning focus to the Menu button. The desktop nav uses no wrapping and is hidden before the available header width becomes too narrow (55rem breakpoint).
+
+The source layout is explicit: Zone 7 has three cards per desktop row and one per phone row; Zone 5's three layer cards stack below 40rem. Two-column product rows are reserved for intermediate tablet widths, not phone widths. The comparison table is the only intended horizontal scroller.
+
+The importer uses a new version option and updates the existing page slug on re-import, so prior Playground instances are not left on the old one-time import guard. The Blueprint still has `login: false`.
+
+These are source-level repairs only. Deployment, browser image rendering, Playground startup/import, touch/keyboard interaction and responsive visual acceptance remain unverified.
