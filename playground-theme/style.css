@@ -1,0 +1,123 @@
+/*
+Theme Name: Careful Shopper Editorial
+Author: Careful Shopper demo
+Description: Editorial theme for the nine-zone mosquito protection guide.
+Version: 1.0.0
+Text Domain: careful-shopper-editorial
+*/
+
+:root{font-family:Verdana,Geneva,Arial,sans-serif;color:#0F1111;background:#FFFFFF;font-size:16px;line-height:1.6}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:#FFFFFF;color:#0F1111;font-family:Verdana,Geneva,Arial,sans-serif;font-size:1rem;line-height:1.6}
+a{color:#0033FF;font-weight:700;text-decoration:underline;text-underline-offset:.12em}
+a:focus-visible,button:focus-visible{outline:.2rem solid #0033FF;outline-offset:.2rem}
+.site-header{background:#FFFFFF;border-bottom:.125rem solid #DDDDDD;padding:1rem}
+.header-inner{max-width:60rem;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:.75rem;min-width:12rem;color:#006633;text-decoration:none}
+.brand-mark{width:3rem;height:3rem;border:.18rem solid #006633;border-radius:50%;display:grid;place-items:center;flex:0 0 3rem;font-size:1.2rem;font-weight:700;line-height:1}
+.brand-copy{display:flex;flex-direction:column;line-height:1.25}
+.brand-name{font-size:1.4rem;font-weight:700;color:#006633}
+.tagline{font-size:1rem;color:#0F1111}
+.desktop-nav{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.desktop-nav a{font-size:1rem}
+.nav-unavailable{font-size:1rem;font-weight:700;text-decoration:underline;text-underline-offset:.12em;color:#0033FF}
+.menu-button{display:none;min-height:3rem;padding:.75rem 1rem;border:0;border-radius:.5rem;background:#663300;color:#FFFFFF;font:700 1rem Verdana,Geneva,Arial,sans-serif}
+.mobile-nav{display:none;max-width:60rem;margin:1rem auto 0;padding:1rem;border:.0625rem solid #DDDDDD;border-radius:.75rem;background:#FFFFFF}
+.mobile-nav.open{display:flex;flex-direction:column;gap:1rem}
+.mobile-nav a,.mobile-nav .nav-unavailable{display:block}
+main{width:min(60rem,calc(100% - 2rem));margin:1.5rem auto 2rem}
+.zone{border-radius:.75rem;padding:2rem;margin:0 0 1.5rem;overflow:hidden}
+.hero{background:#006633;color:#FFFFFF}
+.hero a{color:#FFFFFF}
+.breadcrumb{margin:0 0 .5rem;color:#FFFFFF}
+h1{font-size:1.4rem;line-height:1.35;font-weight:700;color:#FFFFFF;margin:.25rem 0 .75rem}
+h2{font-size:1.2rem;line-height:1.4;font-weight:700;color:#006633;margin:0 0 1rem}
+h3{font-size:1rem;line-height:1.4;font-weight:700;color:#006633;margin:.75rem 0 .5rem}
+p{margin:0 0 1rem}
+p:last-child{margin-bottom:0}
+.byline{margin:0 0 .75rem}
+.short-answer{margin:0}
+.disclosure{background:#FDF6D8;border:.125rem solid #CC9900;border-radius:.75rem;padding:1.25rem;color:#000000;font-size:1.333rem;line-height:1.5}
+.education{background:#FFFFFF}
+.education h2{margin:0 0 .75rem}
+.bite-photo{display:block;width:100%;max-width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:1.5rem;margin:0}
+.photo-credit{text-align:center;font-size:.85rem;font-weight:400;color:#000000;margin:0 0 1rem;width:100%;max-width:100%}
+.education-second{clear:both;padding-top:.25rem}
+.layer-zone,.pairing-zone{background:#EAF3EE}
+.layer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.layer-card{background:#FFFFFF;border:.0625rem solid #DDDDDD;border-radius:.75rem;padding:1rem}
+.layer-card h3{font-size:1.2rem;color:#006633;margin:0 0 .5rem}
+.layer-card p{margin:0}
+.layer-close{margin:1rem 0 0}
+.comparison{background:#FFFFFF}
+.table-wrap{max-width:100%;overflow-x:auto;border:.125rem solid #000000}
+table{border-collapse:collapse;width:100%;min-width:42rem;font-size:1rem;color:#0F1111}
+th,td{border:.0625rem solid #000000;padding:.75rem;text-align:left;vertical-align:top}
+th{font-weight:700;background:#FFFFFF;color:#000000}
+.barrier-zone{background:#F6F2EA}
+.card-zone-intro{margin:0 0 1rem}
+.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,12rem));justify-content:center;gap:1rem}
+.product-card{width:100%;max-width:12rem;background:#FFFFFF;border:.0625rem solid #DDDDDD;border-radius:.75rem;padding:1rem;display:flex;flex-direction:column;align-items:stretch}
+.product-window{display:flex;width:100%;aspect-ratio:16/10;align-items:center;justify-content:center;background:#FFFFFF;border:.125rem dashed #006633;border-radius:1.5rem;color:#000000;text-align:center;font-size:1rem;font-weight:400;text-decoration:none}
+.product-card h3{margin:.75rem 0 .5rem}
+.caption-line{font-size:1rem;margin:0 0 .35rem;color:#0F1111}
+.caption-line strong{font-weight:700}
+.product-cta{display:flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1rem;margin-top:auto;background:#663300;color:#FFFFFF;border-radius:.5rem;text-decoration:none;font-size:1rem;font-weight:700;text-align:center}
+.product-cta:hover{ text-decoration:underline}
+.card-spacer{height:.5rem;flex:1 0 .5rem}
+.pairing-zone .product-card{background:#FFFFFF}
+.footer-zone{background:#006633;color:#FFFFFF}
+.footer-zone h2{color:#FFFFFF}
+.footer-zone a{color:#FFFFFF}
+.footer-nav{display:flex;gap:1.25rem;flex-wrap:wrap;margin:1.25rem 0}
+.footer-nav a,.footer-nav .nav-unavailable{color:#FFFFFF;font-size:1rem}
+.footer-note{margin:.75rem 0 0;padding-top:.75rem;border-top:.0625rem solid #FFFFFF}
+.copyright{margin:1rem 0 0}
+@media(max-width:40rem){
+ .header-inner{align-items:center}
+ .desktop-nav{display:none}
+ .menu-button{display:inline-flex;align-items:center;justify-content:center}
+ main{width:calc(100% - 1rem);margin:1rem auto}
+ .zone{padding:1.25rem;margin-bottom:1rem}
+ .mobile-nav{width:calc(100% - 2rem)}
+ .layer-grid{grid-template-columns:1fr}
+ .product-grid{grid-template-columns:minmax(0,12rem)}
+ .bite-photo{float:none;width:100%;max-width:none;margin:0 0 .25rem;aspect-ratio:16/9}
+ .photo-credit{width:100%;max-width:none;margin:0 0 1rem}
+ .education-second{clear:both}
+
+ .footer-nav{flex-direction:column;gap:.75rem}
+}
+@media(min-width:40.01rem) and (max-width:55rem){
+ .desktop-nav{gap:.75rem}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,12rem))}
+}
+
+/* Editorial refresh */
+:root{--green:#006633;--deep:#004d27;--brown:#663300;--line:#d8e3dc;--soft:#EAF3EE;--cream:#F6F2EA;--gold:#FDF6D8}
+body{line-height:1.65;background:#fff}
+.site-header{border-bottom:1px solid var(--line);box-shadow:0 .25rem 1.25rem rgba(0,45,22,.06)}
+.brand-mark{border-radius:.8rem 50% .8rem 50%;background:var(--soft);transform:rotate(-4deg)}
+.zone{border:1px solid var(--line);box-shadow:0 .45rem 1.5rem rgba(0,45,22,.055)}
+.hero{padding:2.25rem 2.5rem;box-shadow:0 .8rem 2rem rgba(0,77,39,.18)}
+.hero:after{content:"";position:absolute;width:14rem;height:14rem;border:1px solid rgba(255,255,255,.2);border-radius:50%;right:-4rem;top:-6rem;box-shadow:0 0 0 1.5rem rgba(255,255,255,.045),0 0 0 3rem rgba(255,255,255,.035);pointer-events:none}
+.hero>*{position:relative;z-index:1;max-width:48rem}
+.short-answer{padding:1rem 1.1rem;border-left:.22rem solid var(--gold);background:rgba(255,255,255,.1);border-radius:0 .5rem .5rem 0}
+.disclosure{box-shadow:0 .3rem .9rem rgba(102,51,0,.07)}
+.bite-photo{border-radius:.75rem}
+.layer-zone,.pairing-zone{border-color:#c8ddd0}
+.layer-card{border:1px solid #c8ddd0;box-shadow:0 .25rem .75rem rgba(0,45,22,.045)}
+.layer-close{padding:.8rem 1rem;background:rgba(255,255,255,.65);border-radius:.5rem}
+.table-wrap{border:1px solid #9eafa4;border-radius:.65rem}
+th,td{border-bottom:1px solid #d5dfd8;padding:.85rem .8rem}
+th{background:var(--soft);color:var(--deep)}
+tbody tr:nth-child(even){background:#fbfcfa}
+.barrier-zone{border-color:#e5dccc}
+.product-card{border:1px solid #dedbd2;box-shadow:0 .35rem 1rem rgba(57,40,17,.06)}
+.product-window{border-radius:.6rem}
+.product-cta{transition:background .15s ease,transform .15s ease}
+.product-cta:hover{background:#4b2500;text-decoration:underline;transform:translateY(-1px)}
+.footer-note{border-top:1px solid rgba(255,255,255,.55)}
+@media(max-width:40rem){.hero{padding:1.5rem 1.25rem}.hero:after{width:9rem;height:9rem;right:-4rem;top:-4rem}.zone{border-radius:.7rem}}
+@media(prefers-reduced-motion:reduce){.product-cta{transition:none}}
