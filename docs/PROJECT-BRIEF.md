@@ -6,18 +6,18 @@ Build one professional, accessible, responsive nine-zone educational guide. Its 
 This is an independent test/demo, not the official Careful Shopper website.
 
 ## Editorial direction
-- Latest direction: Amazon buttons say **SEE EXAMPLE**, not “BUY NOW” or “View on Amazon”.
+- Latest employer direction: Amazon buttons say **SEE EXAMPLE**, superseding the older Style Sheet “View on Amazon” button label.
 - Explain use cases, compatibility and trade-offs; do not present a product as universally best.
 - Stroller/pram netting guidance must address coverage all the way around and underneath.
-- Preserve source wording; do not silently resolve conflicting instructions.
+- Preserve the Blog document's exact page copy. For Zone 5, use the dedicated Zone 5 section, not the earlier introductory summary table.
 
-## Zone 5 — provisional source wording
+## Zone 5 — controlling page copy
 - **Layer 1: Block** — Nets and screens keep mosquitoes away from skin. You are here.
 - **Layer 2: Reduce** — Repellents, traps, and standing-water control cut how many are around.
 - **Layer 3: Relieve** — Creams and balms calm the bites that still get through.
 - Closing: A net can’t follow you outdoors, and repellent wears off overnight. Each layer covers the other’s gap.
 
-**Open issue:** the source DOCX contains a conflicting Layer 2/Layer 3 description in a later table. Confirm which wording controls before finalizing.
+The Style Sheet specifies the Zone 5 layout and visual treatment; it does not supply alternative layer descriptions. The Blog's earlier overview table is a summary, while its dedicated Zone 5 section is the page-specific copy.
 
 ## Zone 7 — six product cards
 1. Doorway Screen With Magnetic Closure
@@ -27,7 +27,7 @@ This is an independent test/demo, not the official Careful Shopper website.
 5. Baby and Stroller Netting
 6. Outdoor Umbrella Enclosure
 
-The six destination URLs in the source document are placeholders/missing. Do not invent them.
+The source leaves six Amazon URLs as placeholders. The user has authorized selecting suitable example product destinations for this test. Select only products matching the six specified categories; do not add cards/products. Treat links as examples, not verified affiliate-tracked links or endorsement.
 
 ## Zone 8 — five source-provided example destinations
 1. 20% Picaridin Repellent — https://www.amazon.com/Ranger-Ready-Repellents-Picaridin-Repellent/dp/B07P4XC5VD
@@ -39,29 +39,36 @@ The six destination URLs in the source document are placeholders/missing. Do not
 These are source destinations, not independently validated current listings or confirmed affiliate-tracked links.
 
 ## Zone 9
-Required elements: “Curated by Mrs. Shopper”; about 50 words of biography copy; “Read Mrs. Shopper’s full background”; the exact sentence “Careful Shopper accepts no sponsorships from manufacturers or brands.”; footer links About Mrs. Shopper, How we choose products, Affiliate disclosure, Contact, Privacy policy; and © 2026 Careful Shopper.
+- Heading: “Curated by Mrs. Shopper”.
+- Biography: approximately 50 words of lorem ipsum. This is explicitly directed in the Blog document; do not invent personal facts.
+- Link label: “Read Mrs. Shopper’s full background”.
+- Exact sentence: “Careful Shopper accepts no sponsorships from manufacturers or brands.”
+- Footer labels: About Mrs. Shopper, How we choose products, Affiliate disclosure, Contact, Privacy policy.
+- Copyright: © 2026 Careful Shopper.
 
-Do not invent biographical facts or destination URLs.
+The source specifies footer labels but not destination URLs. The HTML draft uses generic # placeholders; those are not confirmed destinations. Do not invent live URLs or build the linked pages. Resolve the targets from an authorized Careful Shopper site reference if available; otherwise visibly flag the destinations as unresolved rather than claiming functional links.
 
 ## Visual and functional constraints
-- Verdana. Body 1rem; page title 1.4rem; zone headings 1.2rem. No heading above 1.4rem.
-- No gray text. No italics except the one phrase allowed by the style sheet.
-- Content max width 60rem; responsive three-card desktop row and one card on mobile.
+- Verdana (with source-specified fallbacks). Body 1rem; page title 1.4rem; zone headings 1.2rem. No heading above 1.4rem.
+- No gray text. Italics only as allowed by the Style Sheet.
+- Content max width 60rem; three-card desktop row and one card on mobile; card max width 14rem.
 - Product windows 16:10, full card width, centered “Product window”, 1rem black text, 0.125rem dashed #006633 border, 1.5rem corners.
 - Product CTA: bold white, #663300 background, 1rem, 0.75rem 1rem padding, min-height 3rem, 0.5rem corners, opens new tab. Label: SEE EXAMPLE.
-- Captions max 30 words; 1rem regular black. Bold product name and applicable “Best for:”, “Works with:” and “Trade-off:” labels. Only two specified Zone 8 cards need Trade-off.
+- Captions max 30 words; 1rem regular black. Include specified “Best for:” and “Works with:” lines, and only the required “Trade-off:” lines.
 - Product window and CTA use the same destination.
 - No prices, ratings, stock claims, dates, extra products or brand/manufacturer/model names (including alt text and filenames).
 - No bracketed production notes in final page. Static only; no animation/carousel.
-- WCAG AA intent, keyboard access and no horizontal overflow except permitted comparison table.
-- Exact affiliate disclosure and styling from the source style sheet must appear immediately before each product-link group on desktop and mobile.
+- WCAG AA contrast, keyboard access, 200% zoom and no horizontal overflow except the comparison table.
+- Exact affiliate disclosure and styling from the Style Sheet must appear immediately before each product-link group on desktop and mobile.
 
 ## Image rules
-Zone 4 requires a licensed stock mosquito-bite photo. The rough HTML's mosquito-bite photo may be a reference; exclude the flea photo. No AI images or manufacturer product photos. Product photo areas are Lasso placeholders; do not download product photos. Credit format: Dreamstime_216036901. Verify public redistribution rights before adding the asset to this public repository.
+Zone 4 requires a licensed stock mosquito-bite photo. The Style Sheet explicitly permits the mosquito-bite photo embedded in the supplied rough HTML or a free watermarked Dreamstime demo photo; it says no purchase/license is needed for this test. User confirms proceeding on that basis. Exclude the flea photo. No AI images or manufacturer product photos. Product photo areas are Lasso placeholders; do not download product photos. Credit exactly: Dreamstime_216036901.
 
-## Source references
-- 20261005-MosquitoBlog.docx (13 pages)
-- 20261006-CarefulShopperStyleSheet.docx (20 pages)
-- 20261005-BugBitesDraft.html (source fully read; not browser-rendered)
+## Source references and access
+- 20261005-MosquitoBlog.docx — DOCX, 13 pages; full content read.
+- 20261006-CarefulShopperStyleSheet.docx — DOCX, 20 pages; full content read.
+- 20261005-BugBitesDraft.html — HTML, 145 source lines / 104,315 bytes; full source read, not browser-rendered.
+- 02_Technical_Stack_and_Project_Evidence.md — Markdown, 192 lines; full read.
+- 03_A4_Resume_Builder_JSON_v2.html — HTML, 457 lines; full read; unrelated to this test implementation.
 
-The source documents remain authoritative; this summary does not replace them.
+Both DOCX specifications were rendered and their pages visually inspected. The embedded mosquito image was inspected; exclude the flea image. The source documents remain authoritative; this summary does not replace them.
