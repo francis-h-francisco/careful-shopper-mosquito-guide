@@ -123,8 +123,7 @@ th{font-weight:700;background:#FFFFFF;color:#000000}
   <h1>Keep Mosquitoes From Biting: Barrier Nets and Screens for Every Space</h1>
   <p class="byline">By Mrs. Shopper.</p>
   <p class="short-answer"><strong>Short answer:</strong> Stop mosquitoes with physical barriers, reduce them around your home, and keep bite relief on hand. This page covers the first layer: nets and screens that keep mosquitoes out.</p>
-  <p class="preview-link"><a href="./playground.html">Open the WordPress preview</a></p>
- </section>
+  </section>
  <section class="zone disclosure" aria-label="Affiliate disclosure">
   Mrs. Shopper explains: I put affiliate sales links on this website. If you buy any products using these links, I may earn a small commission at no extra cost to you. As an Amazon Associate, I earn from qualifying purchases.
  </section>
@@ -285,24 +284,36 @@ th{font-weight:700;background:#FFFFFF;color:#000000}
    <span class="nav-unavailable" aria-label="Contact destination not supplied">Contact</span>
    <span class="nav-unavailable" aria-label="Privacy policy destination not supplied">Privacy policy</span>
   </nav>
-  <p class="footer-note">Some navigation destinations were not included in the supplied test materials. Zone 7 links are Amazon category searches for this test, not verified individual listings or confirmed affiliate-tracked links.</p>
   <p class="copyright">© 2026 Careful Shopper</p>
  </section>
 </main>
 <script>
-const menuButton=document.getElementById('menuButton');
-const mobileNav=document.getElementById('mobileNav');
-menuButton.addEventListener('click',()=>{
- const open=menuButton.getAttribute('aria-expanded')==='true';
- menuButton.setAttribute('aria-expanded',String(!open));
- mobileNav.classList.toggle('open',!open);
-});
-mobileNav.addEventListener('click',event=>{
- if(event.target.closest('a')){
+(() => {
+ const menuButton = document.getElementById('menuButton');
+ const mobileNav = document.getElementById('mobileNav');
+ if (!menuButton || !mobileNav) return;
+ const closeMenu = () => {
   mobileNav.classList.remove('open');
-  menuButton.setAttribute('aria-expanded','false');
- }
-});
+  menuButton.setAttribute('aria-expanded', 'false');
+ };
+ menuButton.addEventListener('click', () => {
+  const open = menuButton.getAttribute('aria-expanded') !== 'true';
+  menuButton.setAttribute('aria-expanded', String(open));
+  mobileNav.classList.toggle('open', open);
+ });
+ mobileNav.addEventListener('click', event => {
+  if (event.target.closest('a')) closeMenu();
+ });
+ document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+   closeMenu();
+   menuButton.focus();
+  }
+ });
+ document.addEventListener('click', event => {
+  if (!mobileNav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+ });
+})();
 </script>
 </body>
 </html>
