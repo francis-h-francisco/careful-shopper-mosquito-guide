@@ -1,68 +1,47 @@
 # Build Checklist
 
-## Confirmed from source / user
-- [x] Six Zone 7 card categories are specified; user authorizes selecting suitable example Amazon destinations for those exact categories.
-- [x] Zone 5 page copy: use the dedicated Zone 5 block in MosquitoBlog: Layer 2 “Repellents, traps, and standing-water control cut how many are around.” Layer 3 “Creams and balms calm the bites that still get through.” Style Sheet governs layout, not layer wording.
-- [x] Zone 4 mosquito-bite photo may be taken from the supplied HTML or a free watermarked Dreamstime demo; no purchase/license needed for this test per Style Sheet and user confirmation. Exclude flea photo; credit Dreamstime_216036901.
-- [x] Zone 9 bio is approximately 50 words of lorem ipsum, explicitly required by MosquitoBlog.
-- [x] Five footer link labels and “Read Mrs. Shopper’s full background” are supplied. Their target URLs are not supplied; do not invent destinations or treat rough HTML # links as working links.
-- [x] Try GitHub Pages + WordPress Playground first; user authorizes conventional shared WordPress hosting as fallback if the experiment is unsuitable.
-- [x] Latest CTA is SEE EXAMPLE.
-- [x] Initial Pages entry page, Playground iframe shell, Blueprint and Actions workflow committed.
+## Scope and content
 
-## Current technical gate — not yet verified
-- [ ] Configure GitHub Pages to use GitHub Actions if required.
-- [ ] Confirm Actions deployment succeeds and identify the actual Pages URL.
-- [ ] In a clean browser, confirm WordPress Playground starts from the Pages URL without a local server.
-- [ ] Confirm the Blueprint imports the nine-zone guide as the WordPress front page.
-- [ ] Reload in a clean/private session and repeat startup.
-- [ ] Repeat in a second browser or device if available.
-- [ ] Record startup time, browser/device and any errors. Do not claim success before observation.
+- [x] Read the current M003 reply; switch from mosquito protection to one coherent security theme.
+- [x] Choose bicycle security with three complementary product categories.
+- [x] Replace mosquito-specific copy and image reference in the Blueprint page content.
+- [x] Use SEE EXAMPLE buttons.
+- [x] Remove obsolete mosquito-only page explanations and category cards.
+- [x] Keep product claims feature-led and avoid brands/models.
+- [ ] Replace Amazon category searches with verified individual third-party seller product pages.
+- [ ] Confirm each selected listing's “Sold by” seller before employer review.
 
-## Still to resolve
-- [ ] Research and select six suitable example Amazon destinations, one for each specified Zone 7 card category. Verify category fit; do not imply current stock, price, endorsement or affiliate tracking.
-- [ ] Identify authorized target URLs for the five footer links and “Read Mrs. Shopper’s full background”. Do not invent them. If no targets can be established, present them without misleading navigation or seek an authorized destination.
-- [ ] If the Playground route fails, investigate the failure and test the authorized conventional WordPress-hosting fallback.
+## Design and behavior
 
-## Available
-- [x] Five Zone 8 example URLs copied from source document; not independently validated or confirmed affiliate links.
-- [x] Layout, typography, disclosure, product-window, caption and accessibility requirements summarized in project brief.
-- [x] Rough HTML source read fully; it is a flawed example, not a model to copy.
-- [x] DOCX source pages rendered and visually inspected.
+- [x] Twenty Twenty-Five parent theme and Careful Shopper child theme retained.
+- [x] Verdana/Geneva/Arial type family and narrow heading scale.
+- [x] Rounded editorial zones around 24px.
+- [x] Desktop nav constrained to one horizontal row; menu shown below 60rem.
+- [x] Mobile menu receives an actual JavaScript click handler; Escape closes it.
+- [x] Product cards: three across desktop; one per row below 48rem; max width 14rem.
+- [x] Layer cards: three across, stack below 40rem.
+- [x] Product window 16:10, dashed green border, rounded corners; product imagery remains a placeholder.
+- [x] Zone 4 image switched to a relevant free Pexels bicycle-lock photo.
+- [ ] Verify Pexels image loads inside Playground.
 
-## Sequence
-1. Enable/configure Pages and validate the minimal Playground startup/import proof.
-2. If viable, research/select the six Zone 7 examples and build the nine-zone guide to the supplied specifications. If not, use the authorized fallback and record why.
-3. Extract the permitted mosquito-bite image, preserve the Dreamstime_216036901 credit, and exclude the flea photo.
-4. Implement exact copy, layout and disclosures from the two DOCX files; no invented footer targets.
-5. Test desktop and 22.5rem mobile, keyboard access, 200% zoom, contrast, links, image ratios and cache updates.
-6. Check every item against the Style Sheet self-check and Blog content instructions.
-7. Publish only after the technical and content acceptance gates pass.
-8. Capture the requested screenshot and share a review URL only after checking it.
+## Runtime and QA
 
-Do not invent destinations, product claims, biography facts, affiliate status, photo rights or shared database behavior. Remove all internal placeholders before final review.
-## 2026-11-06 — Public guide implementation
+- [ ] Deploy current Pages files and confirm Actions success.
+- [ ] Clean-browser Playground startup.
+- [ ] Confirm Blueprint imports the guide as the front page.
+- [ ] Confirm Twenty Twenty-Five parent and Careful Shopper child theme active.
+- [ ] Confirm desktop navigation does not wrap or overflow.
+- [ ] Confirm Menu button is visible, clickable, keyboard-operable and opens/closes navigation.
+- [ ] Confirm three product cards are one row desktop and one column mobile.
+- [ ] Confirm no horizontal page overflow except comparison table.
+- [ ] Keyboard/focus and 200% zoom check.
+- [ ] Repeat in another browser/device.
+- [ ] Capture screenshot after QA.
+- [ ] Share a review URL only after the checks pass.
 
-- [x] Nine-zone public guide implemented in index.html in source order.
-- [x] Verdana typography, specified palette, rounded zones, 60rem content width and source heading/body sizes.
-- [x] Header text mark, nav labels and responsive Menu control.
-- [x] Hero copy and breadcrumb reproduced from MosquitoBlog.
-- [x] Exact affiliate disclosure after hero and repeated immediately above both product groups.
-- [x] Zone 4 education text reproduced; supplied mosquito-bite photo at 16:9 with Dreamstime_216036901 credit; flea photo excluded.
-- [x] Zone 5 controlling layer copy; Zone 6 comparison table; six Zone 7 categories; five Zone 8 products; Zone 9 lorem ipsum bio and footer labels.
-- [x] Product windows 16:10; same destination as each CTA; links open new tabs; card width constrained below desktop photo width.
-- [x] Mobile one-column cards/layers, stacked navigation and table-only horizontal scrolling.
+## Known limitations
 
-## Real-browser QA still required
-- [ ] User visual check at desktop and 22.5rem phone width.
-- [ ] Confirm photo displays/crop, disclosure wraps, menu works and no page-level horizontal overflow.
-- [ ] Keyboard navigation, focus visibility and 200% zoom.
-- [ ] Playground startup and Blueprint import at /playground.html.
-- [ ] Capture final screenshot after QA.
-
-## Open items
-- [ ] Zone 7 currently uses Amazon category-search links, not verified individual product pages. Select/verify one suitable destination per category before employer review.
-- [ ] Footer and Shopping Index/Contact nav destinations were not supplied; flagged rather than invented.
-- [ ] Zone 7 destinations are not confirmed affiliate-tracked links; test-only status is disclosed.
-- [ ] Playground is isolated per visitor and not a shared production WordPress backend.
-- [ ] No screenshot or employer submission; nothing sent to Eve.
+- Amazon category-search URLs do not establish a particular third-party seller. The exact seller must be verified on the destination listing.
+- The Pexels image is externally hosted; image loading is not yet browser-tested.
+- Playground is per-visitor isolated, not a shared WordPress site.
+- No screenshot or employer submission/reply has been made.
