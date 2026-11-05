@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#006633">
-  <title>WordPress Playground Test — Careful Shopper</title>
+  <title>Careful Shopper — WordPress Playground Preview</title>
   <style>
     :root { font-family: Verdana, Geneva, Arial, sans-serif; color: #0f1111; background: #fff; }
     * { box-sizing: border-box; }
@@ -24,12 +24,12 @@
 <body>
   <header><a href="./">← Careful Shopper test home</a></header>
   <main>
-    <h1>WordPress Playground startup and content-import test</h1>
-    <p class="notice"><strong>Experimental:</strong> the WordPress runtime is provided by the official WordPress Playground service. Every visitor gets an isolated browser-side WordPress instance. Do not enter personal or confidential information.</p>
+    <h1>Explore the redesigned Careful Shopper guide</h1>
+    <p class="notice"><strong>Experimental:</strong> the WordPress runtime is provided by the official WordPress Playground service. This Blueprint installs the editorial theme and imports the complete nine-zone mosquito guide. Every visitor gets an isolated browser-side WordPress instance; edits are not shared. Do not enter personal or confidential information.</p>
     <p id="status" role="status" aria-live="polite">Waiting to start WordPress Playground…</p>
     <p><a class="button" href="https://playground.wordpress.net/" target="_blank" rel="noopener noreferrer">Open official Playground separately</a></p>
     <iframe id="playground" title="WordPress Playground test instance" loading="eager"></iframe>
-    <p>If the frame stays blank or reports an error, copy the status message and tell Francis/ChatGPT what browser and device you used.</p>
+    <p>If the frame stays blank or reports an error, copy the status message. First startup can take several minutes.</p>
   </main>
   <script type="module">
     const status = document.getElementById('status');
@@ -52,7 +52,7 @@
         }
         const blueprint = await blueprintResponse.json();
 
-        report('Starting WordPress and importing the sample page. The first load can take several minutes.');
+        report('Starting WordPress, installing the editorial theme and importing the full nine-zone guide. The first load can take several minutes.');
         const client = await startPlaygroundWeb({
           iframe: frame,
           remoteUrl: 'https://playground.wordpress.net/remote.html',
@@ -60,7 +60,7 @@
         });
 
         await client.isReady();
-        report('WordPress Playground is ready. Check that the page titled “Playground Import Check” appears in the frame. This confirms the prepared content was imported.');
+        report('WordPress Playground is ready. The nine-zone Careful Shopper guide should now appear. Use the WordPress admin bar to edit the page. The Playground dock provides ZIP and GitHub export options.');
       } catch (error) {
         console.error(error);
         report('Playground startup failed: ' + (error && error.message ? error.message : String(error)));
