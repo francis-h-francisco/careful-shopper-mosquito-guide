@@ -8,41 +8,50 @@ Build a polished, accessible, mobile-first, nine-zone educational guide that hel
 
 The latest employer direction is to use **SEE EXAMPLE** on Amazon product links—not “BUY NOW” or the older “View on Amazon” label. The guide explains needs, features and trade-offs rather than promoting brands.
 
-## Project status
+## Current status
 
-**Documentation scaffold — implementation and deployment have not yet been validated.**
+**Initial Playground proof-of-concept code committed; Pages deployment and browser startup/import are not yet verified.**
 
-- [x] Public repository created.
-- [x] Source documents reviewed; project brief, checklist and decisions reconciled against them.
-- [x] User authorized example-link selection for the six Zone 7 card categories.
-- [x] User authorized the Pages + Playground experiment first and InfinityFree as fallback if needed.
-- [ ] Select and validate six suitable Zone 7 example destinations.
-- [ ] Resolve authorized destinations for the footer links; source provides labels but not URLs.
-- [ ] Prove the Playground packaging/startup/import approach.
-- [ ] Build the nine-zone page to the supplied specifications.
-- [ ] Test accessibility, responsive layouts, links and cache/update behavior.
+- [x] Public repository and source-reconciled documentation scaffold.
+- [x] User authorized selecting six Zone 7 example destinations.
+- [x] User authorized Pages + Playground first and conventional WordPress hosting as fallback.
+- [x] Static entry page, Playground iframe shell, Blueprint and Pages Actions workflow committed.
+- [ ] Enable/configure GitHub Pages for GitHub Actions if the repository has not already been configured.
+- [ ] Verify Actions deployment and obtain the actual Pages URL.
+- [ ] Test first-time Playground startup and prepared-page import in a clean browser.
+- [ ] Repeat startup and test a second browser/device.
+- [ ] Select and validate six Zone 7 example destinations.
+- [ ] Resolve authorized footer destinations; source provides labels but not URLs.
+- [ ] Build the complete nine-zone guide after the runtime gate passes.
+- [ ] Test responsive layout, accessibility, links, and cache/update behavior.
 - [ ] Publish and verify a review URL before sharing it.
 
-## Important architecture note
+## Architecture boundary
 
-GitHub Pages is a static host. It does not run a conventional WordPress PHP/MySQL server. A browser-based WordPress Playground experiment may load WordPress inside each visitor's browser using WebAssembly and browser storage. Each visitor has a separate local instance; edits and database changes are **not shared** between visitors.
+GitHub Pages serves static files; it does not run a conventional WordPress PHP/MySQL server. The current proof of concept loads the official WordPress Playground client in an iframe and uses a Blueprint to create a prepared WordPress page. WordPress runs in each visitor's browser through WebAssembly. Each visitor has an isolated instance; edits and database changes are **not shared**.
 
-This is an experimental review/demo architecture, not a replacement for a conventional shared WordPress website. Test the preconfigured Playground startup/import flow in real browsers first. The user has authorized InfinityFree/conventional shared WordPress hosting as a fallback if the experiment is not viable.
+The official embed is documented as experimental and may change. This is a review/demo architecture, not a shared production WordPress site. See [the Playground proof-of-concept notes](docs/PLAYGROUND-POC.md).
+
+If the official remote runtime or import flow proves unsuitable, the user has authorized a conventional shared WordPress-hosting fallback. Do not switch before testing and documenting the technical reason.
 
 ## Repository map
 
-- `README.md` — project overview and current status.
-- [`QUICKSTART.md`](QUICKSTART.md) — contributor setup and first-run checklist.
-- [`docs/PROJECT-BRIEF.md`](docs/PROJECT-BRIEF.md) — scope, editorial direction and constraints.
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — Playground + Pages experiment and limitations.
-- [`docs/BUILD-CHECKLIST.md`](docs/BUILD-CHECKLIST.md) — confirmed instructions, unresolved destinations and acceptance checks.
-- [`docs/DECISIONS.md`](docs/DECISIONS.md) — decisions and unresolved questions.
+- `index.html` — static project entry page.
+- `playground.html` — Playground startup/import test harness.
+- `blueprint.json` — prepared WordPress setup and import check page.
+- `docs/PLAYGROUND-POC.md` — technical spike and acceptance criteria.
+- `QUICKSTART.md` — contributor setup.
+- `docs/PROJECT-BRIEF.md` — scope, editorial direction and constraints.
+- `docs/ARCHITECTURE.md` — Playground + Pages experiment and limitations.
+- `docs/BUILD-CHECKLIST.md` — source decisions, open items and acceptance checks.
+- `docs/DECISIONS.md` — decisions and unresolved questions.
+- `.github/workflows/pages.yml` — GitHub Pages deployment workflow.
 
 ## Source-of-truth boundaries
 
 The supplied mosquito blog brief, Careful Shopper style sheet and rough HTML example are the assignment references. The rough HTML is an example to inspect, not a finished implementation to copy wholesale. Where the source documents omit information, record the gap rather than inventing copy, products or URLs.
 
-Do not commit private correspondence, credentials, payment details, or unrelated career records. Only add assets that may legally be redistributed in this public repository. Do not upload watermarked stock images or product/manufacturer photos unless the relevant source explicitly authorizes their use.
+Do not commit private correspondence, credentials, payment details, or unrelated career records. Only add assets that may legally be redistributed in this public repository. Do not upload manufacturer product photos. The Style Sheet permits the supplied mosquito-bite demo photo for this test; exclude the flea photo and retain the specified credit.
 
 ## License and attribution
 
