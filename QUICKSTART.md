@@ -1,44 +1,29 @@
 # Quickstart
 
-This repository now contains an initial static GitHub Pages entry page and WordPress Playground proof-of-concept harness. The full mosquito guide is not yet implemented, and the Pages deployment/browser test is not yet verified.
+## Public guide
 
-## Get the repository
+Open the GitHub Pages URL:
 
-```bash
-git clone https://github.com/francis-h-francisco/careful-shopper-mosquito-guide.git
-cd careful-shopper-mosquito-guide
-```
+https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/
 
-## Read the project references
+The page is the nine-zone mosquito-protection guide. Its content comes from the supplied Mosquito Blog document; its visual rules come from the Careful Shopper Style Sheet.
 
-- [Project brief](docs/PROJECT-BRIEF.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Build checklist](docs/BUILD-CHECKLIST.md)
-- [Decisions](docs/DECISIONS.md)
-- [Playground proof of concept](docs/PLAYGROUND-POC.md)
+## WordPress Playground preview
 
-## Deploy
+1. Open `/playground.html` from the Pages site.
+2. Select **Open WordPress preview**.
+3. Wait for the Playground instance to start.
+4. Confirm the front page is **Keep Mosquitoes From Biting: Barrier Nets and Screens for Every Space**.
+5. Confirm the mosquito-bite photo appears.
+6. At a phone width, tap **Menu** and confirm the five navigation items open vertically and close after a link is selected.
+7. Repeat in a fresh private window.
 
-The workflow at `.github/workflows/pages.yml` deploys the repository root to GitHub Pages when a commit is pushed to `main`.
+Playground runs an isolated WordPress copy in each visitor's browser. It is a preview, not a shared production WordPress server.
 
-If Pages is not configured yet:
-1. Open the repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. Save the setting.
-5. Open **Actions**, then inspect the latest **Deploy static preview to GitHub Pages** run.
-6. When the deployment finishes, open the URL shown by the deployment job.
+## Source and acceptance checks
 
-## Test Playground
-
-1. Open the deployed Pages URL.
-2. Select **Open WordPress Playground test**.
-3. Wait for the status to report that Playground is ready. First startup may take several minutes.
-4. Confirm the WordPress frame displays the page titled **Playground Import Check**.
-5. Repeat in a private/incognito browser window and, if possible, a second browser/device.
-
-The runtime is isolated in each visitor's browser. It is not a shared WordPress database. Do not enter confidential information.
-
-## Before full implementation
-
-Select six authorized Zone 7 example destinations, then build the nine-zone page only after the Playground startup/import gate passes. The footer target URLs are absent from the source files and must not be invented.
+- Read `docs/PROJECT-BRIEF.md`, `docs/BUILD-CHECKLIST.md`, `docs/DECISIONS.md` and `docs/PLAYGROUND-POC.md`.
+- Check desktop and 22.5rem phone widths.
+- Confirm only the comparison table can scroll horizontally.
+- Check keyboard access, Escape-to-close, visible focus and 200% zoom.
+- Do not mark the build complete until the browser checks have actually been performed.
