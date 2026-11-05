@@ -6,7 +6,7 @@ The first static implementation is committed:
 
 - `index.html` — Pages entry page.
 - `playground.html` — iframe shell that loads the official Playground JavaScript client.
-- `blueprint.json` — creates a named WordPress site and a published “Playground Import Check” page through a Blueprint `runPHP` step.
+- `blueprint.json` — installs Twenty Twenty-Five, writes and activates the Careful Shopper child theme, and imports the nine-zone guide as the front page.
 - `.github/workflows/pages.yml` — deploys the repository root to GitHub Pages on pushes to `main`.
 
 **Code is committed, but the GitHub Pages deployment and real-browser runtime/import are not yet verified.**
@@ -23,7 +23,7 @@ The official embed is experimental and may change. Dependence on the public Play
 
 1. Pages deployment succeeds and HTTPS URL is reachable.
 2. First-time visitor can start Playground without a local server.
-3. Blueprint loads and the generated “Playground Import Check” page appears.
+3. Blueprint imports the nine-zone guide as the WordPress front page.
 4. Clean-browser reload repeats the setup successfully.
 5. A second browser/device can repeat startup.
 6. Browser storage, export and restoration behavior are understood before relying on persistence.
@@ -54,7 +54,7 @@ index.html is now the nine-zone public static guide served by GitHub Pages. User
 
 GitHub Pages serves static HTML/CSS/JS. The public guide does not rely on a shared WordPress database.
 
-playground.html loads the official Playground client and blueprint.json. The current Blueprint creates a disposable “Playground Import Check” page. Playground is browser-side and isolated per visitor; it is not a shared PHP/MySQL server. Startup/import and clean-browser repeatability remain unverified.
+playground.html launches the official Playground service using blueprint.json. The Blueprint installs Twenty Twenty-Five, activates a Careful Shopper child theme and imports the nine-zone guide as the front page. Automatic login is disabled. Playground is browser-side and isolated per visitor; it is not a shared PHP/MySQL server. Startup/import and clean-browser repeatability remain unverified.
 
 The static guide is the public reader experience. Playground is a separate technical sandbox for testing WordPress authoring/import behavior. Do not describe the site as WordPress-powered until runtime and full guide import are validated.
 
