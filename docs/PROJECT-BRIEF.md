@@ -72,3 +72,19 @@ Zone 4 requires a licensed stock mosquito-bite photo. The Style Sheet explicitly
 - 03_A4_Resume_Builder_JSON_v2.html — HTML, 457 lines; full read; unrelated to this test implementation.
 
 Both DOCX specifications were rendered and their pages visually inspected. The embedded mosquito image was inspected; exclude the flea image. The source documents remain authoritative; this summary does not replace them.
+
+
+## 2026-11-06 — User correction and repair scope
+
+The user explicitly confirmed that this task remains the mosquito-protection blog and is **not** a bicycle-security project. The earlier bicycle interpretation was incorrect. Keep the nine-zone mosquito topic and the existing design direction; do not substitute products or change the subject.
+
+The user's requested repair scope is limited to:
+1. Fix the Zone 4 photo not appearing.
+2. Keep the five desktop navigation items on one horizontal row; switch to a Menu button before the row can wrap or overflow.
+3. Recheck page content against the two supplied DOCX specifications.
+4. Remove visible explanatory notes that are not part of the assignment.
+5. Apply the Style Sheet without replacing the established visual direction.
+6. Make the phone Menu button functional.
+7. Confirm card behavior against the specification: three across on desktop, one per row on a phone; two columns may be used only at intermediate tablet widths. The three layer cards stack below 40rem.
+
+No browser/runtime verification is implied by source changes alone.
