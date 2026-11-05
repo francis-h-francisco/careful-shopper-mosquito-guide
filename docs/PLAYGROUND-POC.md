@@ -2,40 +2,40 @@
 
 ## Purpose
 
-This first implementation tests a GitHub Pages-hosted static shell that starts WordPress Playground in an iframe and loads a prepared Blueprint. It is a technical spike, not the finished nine-zone guide.
+The Pages site keeps the fast static guide available and provides a separate link to a browser-based WordPress preview. The preview is prepared from a public Blueprint hosted in this repository.
 
-## Files
+## Current implementation
 
-- `index.html` — project entry page.
-- `playground.html` — browser-side Playground client and status reporting.
-- `blueprint.json` — reproducible setup steps and a generated “Playground Import Check” page.
-- `.github/workflows/pages.yml` — deploys the repository root to GitHub Pages after pushes to `main`.
+- `index.html` — public nine-zone guide, with a link to the WordPress preview.
+- `playground.html` — short launch page explaining the isolated preview.
+- `blueprint.json` — installs the WordPress.org Twenty Twenty-Five theme, writes a Careful Shopper child theme and imports the guide as the front page.
+- The child theme keeps the supplied editorial content and adapts its visual system from the MHTML reference: ivory canvas, forest-green hero, gold accent, muted green-grey text, fine borders and rounded editorial panels.
+
+The Blueprint sets `login: false`; it does not automatically log a visitor into the WordPress administrator account. The intended visitor path is the front-end preview, not an editing session.
 
 ## Runtime model and limitations
 
-The static page imports the official Playground client from `https://playground.wordpress.net/client/index.js` and connects to `https://playground.wordpress.net/remote.html`. WordPress processing runs in the visitor's browser through WebAssembly. This is not a PHP/MySQL server hosted by GitHub Pages. Each visitor has an isolated instance and local browser storage; visitor edits are not shared.
+WordPress Playground runs in the visitor's browser through WebAssembly. GitHub Pages serves static files only; it is not a conventional PHP/MySQL host. Each visitor receives an isolated WordPress instance. Changes are not shared with other visitors and do not update the public Pages guide.
 
-The official Playground embed is documented as experimental and may change. The public Playground service is maintained for community use and does not guarantee availability for every traffic level. The first clean-browser run is therefore a required acceptance test.
+The Playground remote runtime is experimental and may change. The public service does not guarantee availability at every traffic level. This is a review/demo route, not a shared production WordPress site.
 
-## Acceptance test
+## Acceptance test — still required
 
 1. Open the Pages URL in a fresh private/incognito browser window.
-2. Wait for the Playground status to report that it is ready.
-3. Confirm the WordPress frame displays the page titled **Playground Import Check**.
-4. Reload the page and confirm startup repeats without manual local-server setup.
-5. Repeat on a second browser or device if possible.
-6. Record startup time, browser/device, any errors, and whether the generated page appears.
+2. Open **WordPress preview** and wait for Playground startup.
+3. Confirm the site opens on the mosquito guide, not a generic sample page.
+4. Confirm Twenty Twenty-Five is the parent theme and Careful Shopper child theme is active.
+5. Confirm no automatic WordPress admin login occurs.
+6. Reload in a clean session and repeat.
+7. Repeat on a second browser or device if possible.
+8. Record browser/device, startup time, errors, page appearance and whether the guide is the front page.
 
-Do not mark the Playground route validated until the user confirms these browser observations. If the remote service, import or repeat startup fails, inspect the failure and decide whether to self-host the Playground static assets or use the authorized conventional WordPress-hosting fallback.
+Do not mark the route validated until these observations are confirmed in a real browser. If the runtime, Blueprint import or repeat startup fails, document the failure and assess the already-authorized conventional WordPress-hosting fallback.
+
+## Blueprint hosting requirement
+
+The Blueprint URL is a public raw GitHub URL. It must remain publicly readable and allow cross-origin requests. The launcher uses the official Playground query parameter to load it. If the repository or branch changes, update the launcher URL too.
 
 ## Source basis
 
-The implementation follows the official WordPress Playground embed/client example and Blueprint documentation. See:
-
-- https://github.com/WordPress/wordpress-playground
-- https://wordpress.github.io/wordpress-playground/developers/build-your-first-app/
-- https://wordpress.github.io/wordpress-playground/blueprints/steps/
-- https://developer.wordpress.org/playground/handbook/guides/import-content-with-blueprints/
-- https://developer.wordpress.org/playground/developers/architecture/host-your-own-playground/
-
-Last updated: 2026-11-06.
+The MHTML file was parsed as a multipart archive and its complete HTML/CSS parts were extracted. It was not independently browser-rendered in this work. The theme translates the supplied palette and layout direction; it does not copy the WordPress.com toolbar, navigation or unrelated page chrome.
