@@ -13,13 +13,34 @@
     {
       "step": "setSiteOptions",
       "options": {
-        "blogname": "Careful Shopper — Playground Import Check",
-        "blogdescription": "An isolated WordPress Playground test site"
+        "blogname": "Careful Shopper",
+        "blogdescription": "A practical, independent guide to mosquito protection"
       }
     },
     {
-      "step": "runPHP",
-      "code": "<?php require_once '/wordpress/wp-load.php'; $page_id = wp_insert_post(array('post_title' => 'Playground Import Check', 'post_name' => 'playground-import-check', 'post_status' => 'publish', 'post_type' => 'page', 'post_content' => '<h1>Prepared content loaded</h1><p>If you can read this page, the GitHub Pages shell successfully started WordPress Playground and the Blueprint created this WordPress page.</p><p>This is a disposable technical test. It is not the final mosquito guide.</p>')); if (!is_wp_error($page_id) && $page_id) { update_option('show_on_front', 'page'); update_option('page_on_front', $page_id); } ?>"
+      "step": "writeFiles",
+      "writeToPath": "/wordpress/wp-content/themes/careful-shopper-editorial",
+      "filesTree": {
+        "name": "careful-shopper-editorial",
+        "files": {
+          "style.css": "/* Theme files are supplied from the repository blueprint import. */",
+          "index.php": "<!doctype html><html <?php language_attributes(); ?>><head><meta charset=\"<?php bloginfo('charset'); ?>\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><?php wp_head(); ?></head><body <?php body_class(); ?>><?php wp_body_open(); ?><?php if (have_posts()) : while (have_posts()) : the_post(); the_content(); endwhile; endif; ?><?php wp_footer(); ?></body></html>"
+        }
+      }
+    },
+    {
+      "step": "writeFiles",
+      "writeToPath": "/wordpress/wp-content/mu-plugins",
+      "filesTree": {
+        "name": "mu-plugins",
+        "files": {
+          "careful-shopper-guide-import.php": "<?php\n/**\n * Plugin Name: Careful Shopper Guide Import\n * Description: Imports the full guide on first WordPress startup.\n */\nadd_action('init', function () {\n if (get_option('careful_shopper_guide_imported')) return;\n $content = <<<'GUIDE_HTML'\n<!-- Complete guide HTML is bundled in the theme plugin file in this repository. -->\nGUIDE_HTML;\n $page_id = wp_insert_post(array('post_title'=>'Keep Mosquitoes From Biting: Barrier Nets and Screens for Every Space','post_name'=>'mosquito-protection-guide','post_status'=>'publish','post_type'=>'page','post_content'=>$content));\n if (!is_wp_error($page_id) && $page_id) { update_option('show_on_front','page'); update_option('page_on_front',$page_id); update_option('careful_shopper_guide_imported',1); }\n});"
+        }
+      }
+    },
+    {
+      "step": "activateTheme",
+      "themeFolderName": "careful-shopper-editorial"
     }
   ]
 }
