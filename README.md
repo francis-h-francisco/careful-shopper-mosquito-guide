@@ -56,3 +56,16 @@ Do not commit private correspondence, credentials, payment details, or unrelated
 ## License and attribution
 
 No open-source license has been selected. Until one is added, assume the original project content and assets are **all rights reserved**. Confirm rights and attribution for every image and other third-party asset before publishing.
+## 2026-11-06 — Nine-zone public guide
+
+**Nine-zone static guide committed; user reports the GitHub Pages URL is live.** Source readback verifies the committed HTML, but no independent visual browser inspection has yet been completed.
+
+Live URL: https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/
+
+The guide includes the nine source-ordered zones, specified Verdana typography and palette, exact disclosure repeated before both product groups, mosquito-bite photo with Dreamstime_216036901 credit, Zone 5 controlling copy, six barrier cards, five pairing cards, comparison table and curated-by/footer. The flea photo is excluded. CTA wording is SEE EXAMPLE per Eve's latest message.
+
+Zone 8 uses the five source-provided Amazon links. Zone 7 currently uses Amazon category-search destinations for the six authorized categories; these are explicitly identified as test links, not verified individual listings or confirmed affiliate-tracked links. Footer and some navigation destinations were not supplied and are flagged rather than invented.
+
+GitHub Pages serves the public static guide. WordPress Playground remains a separate, visitor-isolated experiment at /playground.html; the startup/import test is not yet confirmed. It is not a shared WordPress backend.
+
+Next: user visual QA at desktop and 22.5rem mobile, keyboard/200% zoom checks, Playground startup/import test, individually verified Zone 7 product destinations, and authorized missing navigation/footer URLs. No screenshot has yet been captured and nothing has been sent to Eve.
