@@ -26,3 +26,7 @@
 - No Playground runtime deployed.
 - No Pages workflow/public preview URL validated.
 - No review link sent to Eve.
+
+
+| 2026-11-06 | Use WordPress.org Twenty Twenty-Five as the parent theme and a Careful Shopper child theme for the Playground preview. | User asked to retain Twenty Twenty-Five if possible; MHTML is the visual reference. |
+| 2026-11-06 | Disable automatic WordPress admin login in the Playground Blueprint. | Intended reviewer path is a front-end preview, not an admin session. |
