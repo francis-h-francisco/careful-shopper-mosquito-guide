@@ -4,28 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#006633">
-<title>Careful Shopper — WordPress Playground Preview</title>
+<meta name="description" content="Open the Careful Shopper WordPress editing preview in your browser.">
+<title>Careful Shopper — WordPress Playground</title>
 <style>
-:root{font-family:Verdana,Geneva,Arial,sans-serif;color:#0F1111;background:#fff}
+:root{font-family:Verdana,Geneva,Arial,sans-serif;color:#0F1111;background:#fff;line-height:1.6}
 *{box-sizing:border-box}
-body{margin:0;line-height:1.6}
-header{padding:1rem max(1rem,calc((100% - 75rem)/2));border-bottom:1px solid #d8e3dc}
-header a{color:#006633;font-weight:700}
-main{width:min(75rem,calc(100% - 2rem));margin:1.5rem auto}
-h1{font-size:1.4rem;color:#006633}
-.notice{padding:1rem 1.25rem;background:#FDF6D8;border:.125rem solid #CC9900;border-radius:.75rem}
-#playground{display:block;width:100%;height:78vh;min-height:42rem;border:1px solid #9eafa4;border-radius:.75rem;background:#fff}
-.button{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1rem;background:#663300;color:#fff;border-radius:.5rem;font-weight:700;text-decoration:none}
+body{margin:0}
+header{padding:1rem max(1rem,calc((100% - 64rem)/2));border-bottom:1px solid #d8e3dc}
+header a{color:#006633;font-weight:700;text-decoration:none}
+main{width:min(64rem,calc(100% - 2rem));margin:clamp(2rem,7vw,5rem) auto}
+.eyebrow{color:#006633;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.12;color:#004d27;margin:.5rem 0 1rem}
+.lead{font-size:1.15rem;max-width:48rem}
+.panel{margin:2rem 0;padding:1.5rem;border:1px solid #d8e3dc;border-radius:1rem;background:#f5f8f5}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:3.25rem;padding:.85rem 1.25rem;background:#663300;color:#fff;border-radius:.55rem;font-weight:700;text-decoration:none}
+.button:hover{background:#4b2500}
+.note{font-size:.95rem;color:#3d4942}
 a:focus-visible{outline:.2rem solid #0033FF;outline-offset:.2rem}
 </style>
 </head>
 <body>
-<header><a href="./">← Careful Shopper guide</a></header>
+<header><a href="./">Careful Shopper</a></header>
 <main>
-<h1>Careful Shopper — redesigned WordPress guide</h1>
-<p class="notice"><strong>Playground preview:</strong> WordPress runs privately in your browser. This Blueprint installs the custom editorial theme and imports the nine-zone mosquito guide. First startup may take several minutes. Changes in this preview are not a shared live WordPress site.</p>
-<p><a class="button" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint.json" target="_blank" rel="noopener noreferrer">Open Playground in a new tab</a></p>
-<iframe id="playground" title="Careful Shopper WordPress Playground" src="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint.json" loading="eager" allow="cross-origin-isolated"></iframe>
+<p class="eyebrow">WordPress editing preview</p>
+<h1>Open the Careful Shopper Playground</h1>
+<p class="lead">The WordPress site and its custom editorial theme run in your browser. Launch the preview in its own tab to use the WordPress admin bar and Playground controls without the unreliable embedded frame.</p>
+<section class="panel">
+<p><a class="button" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint.json" target="_blank" rel="noopener noreferrer">Launch Careful Shopper WordPress</a></p>
+<p class="note">First startup may take several minutes while WordPress and the guide are prepared. Each visitor gets a separate browser-based instance; changes here do not update the public GitHub Pages guide or another visitor's copy.</p>
+</section>
+<p><a href="./">Return to the public Careful Shopper guide</a></p>
 </main>
 </body>
 </html>
