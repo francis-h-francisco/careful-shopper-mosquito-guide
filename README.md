@@ -69,3 +69,18 @@ Zone 8 uses the five source-provided Amazon links. Zone 7 currently uses Amazon 
 GitHub Pages serves the public static guide. WordPress Playground remains a separate, visitor-isolated experiment at /playground.html; the startup/import test is not yet confirmed. It is not a shared WordPress backend.
 
 Next: user visual QA at desktop and 22.5rem mobile, keyboard/200% zoom checks, Playground startup/import test, individually verified Zone 7 product destinations, and authorized missing navigation/footer URLs. No screenshot has yet been captured and nothing has been sent to Eve.
+
+
+## 2026-11-06 — Responsive and Playground repair
+
+The user explicitly confirmed that this remains the **mosquito-protection assignment**. Do not substitute a bicycle/security topic. The source DOCX files remain the content and design authority.
+
+- Header navigation now stays on one line. At 55rem and below, the desktop row is replaced by the Menu button before it can wrap or overflow.
+- The static page menu supports click, close-on-link, outside click and Escape.
+- The Playground child theme now loads its own `menu.js`; the earlier imported-page menu had no event handler.
+- The source mosquito-bite WebP remains embedded in the static guide. The Playground importer now writes that supplied image into the Playground site's uploads and uses the resulting URL instead of placing a data URI in WordPress post content.
+- Playground import is versioned and updates the existing guide page by slug, so returning Playground instances can receive the fix without creating a duplicate page.
+- Playground theme styling now follows the supplied Style Sheet's font, size, color, zone, card and responsive requirements. Three cards per row on desktop, two only at intermediate tablet widths, and one per row at phone widths; the three layer cards also stack below 40rem.
+- Removed the extra Playground link from the nine-zone hero and the internal explanatory footer note. The separate Playground launcher is now minimal.
+
+**Still unverified:** GitHub Pages deployment propagation, image rendering in a real browser, Playground startup/import, mobile tap behavior, keyboard/200% zoom and desktop/phone visual QA. Do not claim these passed until observed.
