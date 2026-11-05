@@ -66,3 +66,25 @@ Do not invent destinations, product claims, biography facts, affiliate status, p
 - [ ] Zone 7 destinations are not confirmed affiliate-tracked links; test-only status is disclosed.
 - [ ] Playground is isolated per visitor and not a shared production WordPress backend.
 - [ ] No screenshot or employer submission; nothing sent to Eve.
+
+
+## 2026-11-06 — Requested repair pass
+
+- [x] Confirmed topic remains mosquito protection; no bicycle/security substitution.
+- [x] Static header navigation no longer wraps; Menu control replaces it at 55rem and below.
+- [x] Static Menu supports tap/click, link-close, outside-click close and Escape.
+- [x] Playground child theme enqueues a dedicated mobile-menu script with the same behavior.
+- [x] Playground importer uploads the supplied mosquito-bite WebP into the local Playground uploads directory and stores the resulting image URL; post content no longer relies on a data URI.
+- [x] Playground import is versioned and updates the existing page by slug instead of skipping an earlier import or creating a duplicate.
+- [x] Child-theme CSS follows the source Style Sheet's Verdana font, restricted type scale, exact color roles, zone widths and card/window ratios.
+- [x] Cards: three columns on desktop, one column below 40rem (including the required 22.5rem phone width); two columns are limited to intermediate widths. Layer cards stack below 40rem.
+- [x] Removed the extra hero preview link and internal explanatory footer note from the nine-zone public page.
+- [x] Simplified the separate Playground launcher.
+- [ ] Verify latest GitHub Pages deployment and cache propagation.
+- [ ] Verify photo rendering on the live static page and inside Playground.
+- [ ] Verify Playground first-run import and re-import in a clean browser.
+- [ ] Test Menu by touch and keyboard on a real phone-width browser.
+- [ ] Test 200% zoom, focus visibility, page overflow and the comparison-table-only horizontal scroll.
+- [ ] Capture screenshot only after visual QA.
+
+The CSS and script changes are committed source, not proof of successful browser behavior.
