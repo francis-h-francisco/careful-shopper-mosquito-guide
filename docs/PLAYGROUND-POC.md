@@ -39,3 +39,14 @@ The Blueprint URL is a public raw GitHub URL. It must remain publicly readable a
 ## Source basis
 
 The MHTML file was parsed as a multipart archive and its complete HTML/CSS parts were extracted. It was not independently browser-rendered in this work. The theme translates the supplied palette and layout direction; it does not copy the WordPress.com toolbar, navigation or unrelated page chrome.
+
+
+## 2026-11-06 — Import and interaction repair
+
+- The child theme enqueues `menu.js`; the previous imported page had a Menu button but no WordPress-theme script attached to it.
+- The script supports click/tap, close-on-link, outside click, Escape and focus return.
+- The importer writes the supplied mosquito-bite WebP to the Playground site's uploads directory and inserts its generated URL into the page. It no longer depends on a data URI surviving WordPress sanitization.
+- A versioned import guard updates the existing `mosquito-protection-guide` page by slug and resets the front-page option; it avoids duplicate pages and avoids silently skipping the repair in returning instances.
+- The child theme's visual rules now use the source Style Sheet values and responsive layout. Desktop navigation never wraps; the Menu button replaces it at 55rem. Product cards are three across on desktop, two only at intermediate widths, and one per row below 40rem. Layer cards stack below 40rem.
+
+The source code has not been validated in a live browser. Run every acceptance test above before claiming the preview works.
