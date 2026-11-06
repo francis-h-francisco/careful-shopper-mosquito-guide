@@ -1,90 +1,53 @@
-# Build Checklist
+# Build and Acceptance Checklist
 
-## Confirmed from source / user
-- [x] Six Zone 7 card categories are specified; user authorizes selecting suitable example Amazon destinations for those exact categories.
-- [x] Zone 5 page copy: use the dedicated Zone 5 block in MosquitoBlog: Layer 2 “Repellents, traps, and standing-water control cut how many are around.” Layer 3 “Creams and balms calm the bites that still get through.” Style Sheet governs layout, not layer wording.
-- [x] Zone 4 mosquito-bite photo may be taken from the supplied HTML or a free watermarked Dreamstime demo; no purchase/license needed for this test per Style Sheet and user confirmation. Exclude flea photo; credit Dreamstime_216036901.
-- [x] Zone 9 bio is approximately 50 words of lorem ipsum, explicitly required by MosquitoBlog.
-- [x] Five footer link labels and “Read Mrs. Shopper’s full background” are supplied. Their target URLs are not supplied; do not invent destinations or treat rough HTML # links as working links.
-- [x] Try GitHub Pages + WordPress Playground first; user authorizes conventional shared WordPress hosting as fallback if the experiment is unsuitable.
-- [x] Latest CTA is SEE EXAMPLE.
-- [x] Initial Pages entry page, Playground iframe shell, Blueprint and Actions workflow committed.
+## Source and content corrections
 
-## Current technical gate — not yet verified
-- [ ] Configure GitHub Pages to use GitHub Actions if required.
-- [ ] Confirm Actions deployment succeeds and identify the actual Pages URL.
-- [ ] In a clean browser, confirm WordPress Playground starts from the Pages URL without a local server.
-- [ ] Confirm the Blueprint imports the nine-zone guide as the WordPress front page.
-- [ ] Reload in a clean/private session and repeat startup.
-- [ ] Repeat in a second browser or device if available.
-- [ ] Record startup time, browser/device and any errors. Do not claim success before observation.
+- [x] Keep the assignment topic: mosquito protection, not another product category.
+- [x] Use the exact Zone 5 layer descriptions and closing sentence from the dedicated Blog section.
+- [x] Use the required three-layer labels: Block, Reduce and Relieve.
+- [x] Remove the additional Zone 5 editorial kicker and numbered labels.
+- [x] Use the required site tagline: “Products that work better together.”
+- [x] Use approximately 50 words of lorem ipsum for the Zone 9 biography; do not invent personal facts.
+- [x] Add the “Read Mrs. Shopper’s full background” link label.
+- [x] Keep the nine-zone page in the prescribed order and preserve the specified card names, pairings and CTA wording.
+- [x] Keep the source disclosure wording and its three placements.
+- [x] Remove the invented biography copy.
 
-## Still to resolve
-- [ ] Research and select six suitable example Amazon destinations, one for each specified Zone 7 card category. Verify category fit; do not imply current stock, price, endorsement or affiliate tracking.
-- [ ] Identify authorized target URLs for the five footer links and “Read Mrs. Shopper’s full background”. Do not invent them. If no targets can be established, present them without misleading navigation or seek an authorized destination.
-- [ ] If the Playground route fails, investigate the failure and test the authorized conventional WordPress-hosting fallback.
+## Source-level design checks
 
-## Available
-- [x] Five Zone 8 example URLs copied from source document; not independently validated or confirmed affiliate links.
-- [x] Layout, typography, disclosure, product-window, caption and accessibility requirements summarized in project brief.
-- [x] Rough HTML source read fully; it is a flawed example, not a model to copy.
-- [x] DOCX source pages rendered and visually inspected.
+- [x] Verdana typography and the specified body/heading/disclosure sizes are defined in the child theme.
+- [x] Exact Style Sheet color palette is used in the child theme: #FFFFFF, #0F1111, #006633, #0033FF, #663300, #FDF6D8, #CC9900, #F6F2EA, #EAF3EE and #DDDDDD.
+- [x] Desktop navigation is configured not to wrap; the Menu button replaces it at the responsive breakpoint.
+- [x] Menu script supports toggle, close-on-link, outside-click close and Escape with focus return.
+- [x] Product cards are three columns on desktop, two only at intermediate widths and one column below 40rem.
+- [x] Layer cards stack below 40rem.
+- [x] Product windows use 16:10; the Zone 4 photo style is 16:9.
+- [x] Product windows and their corresponding CTA buttons share the same destination.
+- [x] Product CTAs use SEE EXAMPLE and open a new tab.
+- [x] Comparison table is the only intentionally horizontally scrollable content area in the page CSS.
 
-## Sequence
-1. Enable/configure Pages and validate the minimal Playground startup/import proof.
-2. If viable, research/select the six Zone 7 examples and build the nine-zone guide to the supplied specifications. If not, use the authorized fallback and record why.
-3. Extract the permitted mosquito-bite image, preserve the Dreamstime_216036901 credit, and exclude the flea photo.
-4. Implement exact copy, layout and disclosures from the two DOCX files; no invented footer targets.
-5. Test desktop and 22.5rem mobile, keyboard access, 200% zoom, contrast, links, image ratios and cache updates.
-6. Check every item against the Style Sheet self-check and Blog content instructions.
-7. Publish only after the technical and content acceptance gates pass.
-8. Capture the requested screenshot and share a review URL only after checking it.
+## Not passed — content/assets/link requirements
 
-Do not invent destinations, product claims, biography facts, affiliate status, photo rights or shared database behavior. Remove all internal placeholders before final review.
-## 2026-11-06 — Public guide implementation
+- [ ] Replace the current Zone 4 Pexels image with the assignment-permitted image from the original rough-draft HTML or the permitted Dreamstime preview. The original rough-draft HTML is not present in the current Project Sources inventory; the MHTML image is not a permitted substitute. Do not change the credit until the correct asset is identified.
+- [ ] Replace the six Zone 7 Amazon category-search URLs with individually selected product-page URLs that match the six card categories. The present URLs are searches, not verified product listings.
+- [ ] Verify the five Zone 8 source-provided Amazon product URLs still resolve to the intended products.
+- [ ] Confirm affiliate tracking and Amazon Associate status before representing the live links as commission-bearing. The current plain example URLs are not verified affiliate links.
+- [ ] Obtain authorized destinations for Shopping Index, Contact, How we choose products and Privacy policy. Keep unavailable items non-clickable until the correct targets are known. Home and in-page links must resolve correctly.
+- [ ] Confirm the Zone 4 image is visibly larger than product windows at desktop widths after the approved image is installed.
+- [ ] Confirm every caption is no more than 30 words and that no prohibited brand, manufacturer or model name appears in visible copy, alt text or filenames.
 
-- [x] Nine-zone public guide implemented in index.html in source order.
-- [x] Verdana typography, specified palette, rounded zones, 60rem content width and source heading/body sizes.
-- [x] Header text mark, nav labels and responsive Menu control.
-- [x] Hero copy and breadcrumb reproduced from MosquitoBlog.
-- [x] Exact affiliate disclosure after hero and repeated immediately above both product groups.
-- [x] Zone 4 education text reproduced; supplied mosquito-bite photo at 16:9 with Dreamstime_216036901 credit; flea photo excluded.
-- [x] Zone 5 controlling layer copy; Zone 6 comparison table; six Zone 7 categories; five Zone 8 products; Zone 9 lorem ipsum bio and footer labels.
-- [x] Product windows 16:10; same destination as each CTA; links open new tabs; card width constrained below desktop photo width.
-- [x] Mobile one-column cards/layers, stacked navigation and table-only horizontal scrolling.
+## Not passed — browser/runtime acceptance
 
-## Real-browser QA still required
-- [ ] User visual check at desktop and 22.5rem phone width.
-- [ ] Confirm photo displays/crop, disclosure wraps, menu works and no page-level horizontal overflow.
-- [ ] Keyboard navigation, focus visibility and 200% zoom.
-- [ ] Playground startup and Blueprint import at /playground.html.
-- [ ] Capture final screenshot after QA.
+- [ ] Confirm GitHub Pages deployment and cache propagation in a real browser.
+- [ ] Start the Playground preview in a clean session and confirm the Blueprint imports the nine-zone guide as the front page.
+- [ ] Repeat startup/import in a fresh session and a second browser/device if available.
+- [ ] Confirm the approved Zone 4 photo renders in both the public launcher flow and Playground.
+- [ ] Test desktop layout and a 22.5rem phone viewport; confirm no page-level horizontal overflow.
+- [ ] Test Menu by touch and keyboard, including link-close, outside-click and Escape.
+- [ ] Test visible keyboard focus and 200% zoom.
+- [ ] Confirm the comparison table alone scrolls horizontally.
+- [ ] Capture the final screenshot only after all acceptance checks pass.
 
-## Open items
-- [ ] Zone 7 currently uses Amazon category-search links, not verified individual product pages. Select/verify one suitable destination per category before employer review.
-- [ ] Footer and Shopping Index/Contact nav destinations were not supplied; flagged rather than invented.
-- [ ] Zone 7 destinations are not confirmed affiliate-tracked links; test-only status is disclosed.
-- [ ] Playground is isolated per visitor and not a shared production WordPress backend.
-- [ ] No screenshot or employer submission; nothing sent to Eve.
+## Delivery status
 
-
-## 2026-11-06 — Requested repair pass
-
-- [x] Confirmed topic remains mosquito protection; no bicycle/security substitution.
-- [x] Static header navigation no longer wraps; Menu control replaces it at 55rem and below.
-- [x] Static Menu supports tap/click, link-close, outside-click close and Escape.
-- [x] Playground child theme enqueues a dedicated mobile-menu script with the same behavior.
-- [x] Playground importer uploads the supplied mosquito-bite WebP into the local Playground uploads directory and stores the resulting image URL; post content no longer relies on a data URI.
-- [x] Playground import is versioned and updates the existing page by slug instead of skipping an earlier import or creating a duplicate.
-- [x] Child-theme CSS follows the source Style Sheet's Verdana font, restricted type scale, exact color roles, zone widths and card/window ratios.
-- [x] Cards: three columns on desktop, one column below 40rem (including the required 22.5rem phone width); two columns are limited to intermediate widths. Layer cards stack below 40rem.
-- [x] Removed the extra hero preview link and internal explanatory footer note from the nine-zone public page.
-- [x] Simplified the separate Playground launcher.
-- [ ] Verify latest GitHub Pages deployment and cache propagation.
-- [ ] Verify photo rendering on the live static page and inside Playground.
-- [ ] Verify Playground first-run import and re-import in a clean browser.
-- [ ] Test Menu by touch and keyboard on a real phone-width browser.
-- [ ] Test 200% zoom, focus visibility, page overflow and the comparison-table-only horizontal scroll.
-- [ ] Capture screenshot only after visual QA.
-
-The CSS and script changes are committed source, not proof of successful browser behavior.
+Source-level corrections are committed, but the assignment is **not yet passed for Eve**. Do not send a screenshot or claim completion until all unchecked content, asset, link and browser/runtime checks above are resolved. No submission or reply is sent by this repository.
