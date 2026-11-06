@@ -1,29 +1,25 @@
 # Quickstart
 
-## Public guide
+## Open the preview
 
-Open the GitHub Pages URL:
-
-https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/
-
-The page is the nine-zone mosquito-protection guide. Its content comes from the supplied Mosquito Blog document; its visual rules come from the Careful Shopper Style Sheet.
-
-## WordPress Playground preview
-
-1. Open `/playground.html` from the Pages site.
-2. Select **Open WordPress preview**.
-3. Wait for the Playground instance to start.
+1. Visit the [GitHub Pages project entry](https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/).
+2. Open the [WordPress Playground preview launcher](https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/playground.html).
+3. Select **Open WordPress preview** and wait for the browser-based WordPress instance to start.
 4. Confirm the front page is **Keep Mosquitoes From Biting: Barrier Nets and Screens for Every Space**.
-5. Confirm the mosquito-bite photo appears.
-6. At a phone width, tap **Menu** and confirm the five navigation items open vertically and close after a link is selected.
-7. Repeat in a fresh private window.
 
-Playground runs an isolated WordPress copy in each visitor's browser. It is a preview, not a shared production WordPress server.
+Playground runs an isolated WordPress copy in each visitor's browser. It is a review preview, not a shared production WordPress server.
 
-## Source and acceptance checks
+## Acceptance review
 
-- Read `docs/PROJECT-BRIEF.md`, `docs/BUILD-CHECKLIST.md`, `docs/DECISIONS.md` and `docs/PLAYGROUND-POC.md`.
+Before treating the guide as complete:
+
+- Read `docs/PROJECT-BRIEF.md` and `docs/BUILD-CHECKLIST.md`.
 - Check desktop and 22.5rem phone widths.
-- Confirm only the comparison table can scroll horizontally.
-- Check keyboard access, Escape-to-close, visible focus and 200% zoom.
-- Do not mark the build complete until the browser checks have actually been performed.
+- Confirm the approved Zone 4 image loads and the menu works by touch and keyboard.
+- Confirm no page-level horizontal overflow; only the comparison table may scroll horizontally.
+- Check visible keyboard focus and 200% zoom.
+- Verify all product and navigation destinations.
+- Repeat Playground startup in a clean browser session.
+- Capture a screenshot only after the acceptance checks pass.
+
+The current unresolved items are listed in `docs/BUILD-CHECKLIST.md`.
