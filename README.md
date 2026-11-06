@@ -1,97 +1,42 @@
 # Careful Shopper — Mosquito Protection Guide
 
-> **Independent test/demo workspace.** This repository is a technical experiment for a WordPress Playground-based preview of a mosquito-protection buyer guide. It is not the official Careful Shopper production website and is not affiliated with or endorsed by Careful Shopper.
+A nine-zone educational guide about mosquito barriers and the products that complement them.
 
-## Purpose
+**Preview:** [Open the WordPress Playground preview](https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/playground.html)
 
-Build a polished, accessible, mobile-first, nine-zone educational guide that helps readers understand mosquito-bite protection choices without pressuring them to buy a particular product. The intended business model may include affiliate commissions, disclosed clearly and consistently.
+This is an independent demonstration project, not the official Careful Shopper website or a shared production WordPress installation.
 
-The latest employer direction is to use **SEE EXAMPLE** on Amazon product links—not “BUY NOW” or the older “View on Amazon” label. The guide explains needs, features and trade-offs rather than promoting brands.
+## What the guide covers
 
-## Current status
+- Why mosquitoes bite and the risks associated with bites
+- Three complementary protection layers: block, reduce and relieve
+- A comparison of common mosquito barriers
+- Six barrier categories and five complementary product categories
+- Clear product-link disclosure and practical pairing guidance
 
-**Static guide and updated Twenty Twenty-Five child-theme Blueprint are committed; Pages deployment and real-browser Playground startup/import are not yet verified.**
+The page follows the supplied Mosquito Blog and Careful Shopper Style Sheet. Product buttons use **SEE EXAMPLE**, as requested for the demonstration.
 
-- [x] Public repository and source-reconciled documentation scaffold.
-- [x] User authorized selecting six Zone 7 example destinations.
-- [x] User authorized Pages + Playground first and conventional WordPress hosting as fallback.
-- [x] Static entry page, Playground iframe shell, Blueprint and Pages Actions workflow committed.
-- [ ] Enable/configure GitHub Pages for GitHub Actions if the repository has not already been configured.
-- [ ] Verify Actions deployment and obtain the actual Pages URL.
-- [ ] Test first-time Playground startup and prepared-page import in a clean browser.
-- [ ] Repeat startup and test a second browser/device.
-- [ ] Select and validate six Zone 7 example destinations.
-- [ ] Resolve authorized footer destinations; source provides labels but not URLs.
-- [x] Import the existing nine-zone guide as the Playground front page in the Blueprint.
-- [ ] Test responsive layout, accessibility, links, and cache/update behavior.
-- [ ] Publish and verify a review URL before sharing it.
+## Preview architecture
 
-## Architecture boundary
+The preview is launched with [WordPress Playground](https://wordpress.org/playground/). GitHub Pages serves the launcher and Blueprint; WordPress runs as an isolated instance in each visitor's browser. It is not a shared WordPress database, and visitor changes are not published to a common site.
 
-GitHub Pages serves static files; it does not run a conventional WordPress PHP/MySQL server. The current proof of concept loads the official WordPress Playground client in an iframe and uses a Blueprint to create a prepared WordPress page. WordPress runs in each visitor's browser through WebAssembly. Each visitor has an isolated instance; edits and database changes are **not shared**.
+- [Open the preview launcher](https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/playground.html)
+- [View the Playground Blueprint](blueprint.json)
 
-The official embed is documented as experimental and may change. This is a review/demo architecture, not a shared production WordPress site. See [the Playground proof-of-concept notes](docs/PLAYGROUND-POC.md).
+## Important limitations
 
-If the official remote runtime or import flow proves unsuitable, the user has authorized a conventional shared WordPress-hosting fallback. Do not switch before testing and documenting the technical reason.
+This repository is a review/demo, not a production storefront. Product links are demonstration destinations; affiliate tracking, product availability and current listing details are not verified. Some navigation and footer destinations were not supplied in the assignment and remain non-functional rather than pointing to invented pages.
 
-## Repository map
+The Zone 4 image currently needs replacement with the image specifically permitted by the assignment (the image embedded in the original rough-draft HTML or the permitted Dreamstime demo). The current source image is from the MHTML visual reference and is not accepted as a substitute for that required asset.
 
-- `index.html` — static project entry page.
-- `playground.html` — Playground startup/import test harness.
-- `blueprint.json` — installs Twenty Twenty-Five, activates the Careful Shopper child theme and imports the guide as the front page.
-- `docs/PLAYGROUND-POC.md` — technical spike and acceptance criteria.
-- `QUICKSTART.md` — contributor setup.
-- `docs/PROJECT-BRIEF.md` — scope, editorial direction and constraints.
-- `docs/ARCHITECTURE.md` — Playground + Pages experiment and limitations.
-- `docs/BUILD-CHECKLIST.md` — source decisions, open items and acceptance checks.
-- `docs/DECISIONS.md` — decisions and unresolved questions.
-- `.github/workflows/pages.yml` — GitHub Pages deployment workflow.
+A successful source build does not prove that the live Playground preview has started or rendered correctly. Browser checks, responsive checks, keyboard/zoom checks and a final screenshot remain required before this is presented as complete.
 
-## Source-of-truth boundaries
+## Project files
 
-The supplied mosquito blog brief, Careful Shopper style sheet and rough HTML example are the assignment references. The rough HTML is an example to inspect, not a finished implementation to copy wholesale. Where the source documents omit information, record the gap rather than inventing copy, products or URLs.
+- `blueprint.json` — WordPress Playground setup, child theme, page content and menu behavior.
+- `index.html` — project entry page.
+- `playground.html` — WordPress preview launcher.
+- `docs/PROJECT-BRIEF.md` — content and acceptance requirements.
+- `docs/BUILD-CHECKLIST.md` — remaining acceptance checks.
+- `docs/PLAYGROUND-POC.md` — preview architecture and runtime limitations.
 
-Do not commit private correspondence, credentials, payment details, or unrelated career records. Only add assets that may legally be redistributed in this public repository. Do not upload manufacturer product photos. The Style Sheet permits the supplied mosquito-bite demo photo for this test; exclude the flea photo and retain the specified credit.
-
-## License and attribution
-
-No open-source license has been selected. Until one is added, assume the original project content and assets are **all rights reserved**. Confirm rights and attribution for every image and other third-party asset before publishing.
-## 2026-11-06 — Nine-zone public guide
-
-**Nine-zone static guide committed; user reports the GitHub Pages URL is live.** Source readback verifies the committed HTML, but no independent visual browser inspection has yet been completed.
-
-Live URL: https://francis-h-francisco.github.io/careful-shopper-mosquito-guide/
-
-The guide includes the nine source-ordered zones, specified Verdana typography and palette, exact disclosure repeated before both product groups, mosquito-bite photo with Dreamstime_216036901 credit, Zone 5 controlling copy, six barrier cards, five pairing cards, comparison table and curated-by/footer. The flea photo is excluded. CTA wording is SEE EXAMPLE per Eve's latest message.
-
-Zone 8 uses the five source-provided Amazon links. Zone 7 currently uses Amazon category-search destinations for the six authorized categories; these are explicitly identified as test links, not verified individual listings or confirmed affiliate-tracked links. Footer and some navigation destinations were not supplied and are flagged rather than invented.
-
-GitHub Pages serves the public static guide. WordPress Playground remains a separate, visitor-isolated experiment at /playground.html; the startup/import test is not yet confirmed. It is not a shared WordPress backend.
-
-Next: user visual QA at desktop and 22.5rem mobile, keyboard/200% zoom checks, Playground startup/import test, individually verified Zone 7 product destinations, and authorized missing navigation/footer URLs. No screenshot has yet been captured and nothing has been sent to Eve.
-
-
-## 2026-11-06 — Responsive and Playground repair
-
-The user explicitly confirmed that this remains the **mosquito-protection assignment**. Do not substitute a bicycle/security topic. The source DOCX files remain the content and design authority.
-
-- Header navigation now stays on one line. At 55rem and below, the desktop row is replaced by the Menu button before it can wrap or overflow.
-- The static page menu supports click, close-on-link, outside click and Escape.
-- The Playground child theme now loads its own `menu.js`; the earlier imported-page menu had no event handler.
-- The source mosquito-bite WebP remains embedded in the static guide. The Playground importer now writes that supplied image into the Playground site's uploads and uses the resulting URL instead of placing a data URI in WordPress post content.
-- Playground import is versioned and updates the existing guide page by slug, so returning Playground instances can receive the fix without creating a duplicate page.
-- Playground theme styling now follows the supplied Style Sheet's font, size, color, zone, card and responsive requirements. Three cards per row on desktop, two only at intermediate tablet widths, and one per row at phone widths; the three layer cards also stack below 40rem.
-- Removed the extra Playground link from the nine-zone hero and the internal explanatory footer note. The separate Playground launcher is now minimal.
-
-**Still unverified:** GitHub Pages deployment propagation, image rendering in a real browser, Playground startup/import, mobile tap behavior, keyboard/200% zoom and desktop/phone visual QA. Do not claim these passed until observed.
-
-
-## 2026-11-06 — MHTML photo and Playground mobile-menu repair
-
-The user reported that the education image still did not appear like the MHTML reference and that the mobile Menu control was inert. Readback of the live source identified two separate issues: the static page embedded a different small skin-only WebP rather than the MHTML's mosquito-on-skin photograph; the Playground importer cached the old image URL and its v3 one-time guard would skip an updated import; and the Playground child theme enqueued CSS but no JavaScript for the Menu button. The static index already had an inline click handler, but the imported WordPress page did not.
-
-- Replaced the static index.html image with an optimized 320×213 JPEG derived from the MHTML's embedded Pexels photograph. Updated alt text and credit to Photo: Anuj / Pexels. New commit: a21c40108379e7e3a718bf585d1f1f4ab4fd1518; verified blob: 52a8d950aa86f90147dd8c4b5bb9ec9b0348eba6.
-- Updated blueprint.json to upload the same JPEG to Playground uploads, use a fresh image-option key, and advance the import guard to v4 so existing v3 instances can receive the correction. Added child-theme menu.js and enqueued it from functions.php; it toggles the mobile nav, closes after a link, closes on outside click and Escape, and returns focus to Menu. New commit: 0c3e8151f709525537b2ffb34ceb59cb2c8079bd; verified blob: eae60bbbdd92573440a5fcc2a63eace735ed124a.
-- Readback verified the embedded JPEG data (5,892 base64 characters) and its rendered preview, updated attribution/alt text, v4 import guard, new image option key, menu.js, and its enqueue call. This is source-level verification only.
-- Not verified: live GitHub Pages propagation, actual image rendering in a clean browser, Playground upload/import success, or real mobile tap behavior. Direct web retrieval of the live Pages and WordPress URLs was inaccessible. Do not claim browser QA passed.
-- Next: reload the deployed static page and rerun the updated Blueprint in a fresh Playground session; test the photo and Menu on desktop and a phone-width viewport. No screenshot or employer submission/reply was sent.
