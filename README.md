@@ -6,10 +6,24 @@ A nine-zone educational guide about mosquito barriers and the products that comp
 
 ## Available design versions
 
-- **Version 1.0.0 — Original:** [Open original Playground preview](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint.json). The original blueprint.json remains the preserved baseline.
-- **Version 2.0.0 — Refreshed:** [Open refreshed Playground preview](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint-v2.0.0.json). The separate blueprint-v2.0.0.json adds a shield-style brand mark and numbered three-layer cards, adapted from the supplied visual reference while retaining the source-specified content and presentation rules.
+- **Version 1 — Strict:** [Open in WordPress Playground](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint-v1-strict.json). Follows the Careful Shopper Style Sheet value by value: Verdana only, the listed colors only, rem sizes, nine zones in order, "See Example" buttons, the exact disclosure above every group of product links.
+- **Version 2 — Creative:** [Open in WordPress Playground](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint-v2-creative.json). Same words and content rules, a new field-guide design: serif display type, pine and amber palette, a sticky contents rail, specimen product cards with "See example on Amazon", and a comparison table that becomes cards on a phone.
 
-Each link launches an independent WordPress Playground instance in the visitor browser. The two previews do not share a WordPress database, and edits in one do not update the other.
+Each link launches an independent WordPress Playground instance in the visitor browser. The two previews do not share a WordPress database, and edits in one do not update the other. The older blueprint.json and blueprint-v2.*.json files are kept as history and are no longer linked from the landing page.
+
+## How the versions are built
+
+The blueprints are generated, not hand-edited:
+
+- tools/guide_content.py holds every word of the guide, so both versions say the same thing.
+- versions/v1-strict/ and versions/v2-creative/ each hold render.py (markup), theme/ (a Twenty Twenty-Five child theme: style.css, functions.php, menu.js, templates, parts) and version.json.
+- tools/build-blueprints.py renders each version and writes blueprint-v1-strict.json and blueprint-v2-creative.json. The blueprint installs Twenty Twenty-Five, writes the child theme, and adds a must-use plugin that uploads the Zone 4 photo and creates the guide as the static front page.
+- tools/preview.py assembles each version locally and audits it in Chromium at 1440, 1024, 768, 600 and 360 px (fonts, sizes, colors, overflow, cards per row). It needs Playwright.
+
+```
+python3 tools/build-blueprints.py          # both versions
+python3 tools/preview.py v1-strict v2-creative
+```
 
 ## What the guide covers
 
@@ -19,7 +33,7 @@ Each link launches an independent WordPress Playground instance in the visitor b
 - Six barrier categories and five complementary product categories
 - Clear product-link disclosure and practical pairing guidance
 
-The page follows the supplied Mosquito Blog and Careful Shopper Style Sheet. Product buttons use **SEE EXAMPLE**, as requested for the demonstration.
+The page follows the supplied Mosquito Blog and Careful Shopper Style Sheet. Product buttons say **See Example** (Version 1) or **See example on Amazon** (Version 2), both wordings Eve approved.
 
 ## Preview architecture
 
@@ -35,8 +49,9 @@ A successful source build does not prove that a Playground preview has started o
 
 ## Project files
 
-- blueprint.json — preserved Version 1.0.0 WordPress Playground setup.
-- blueprint-v2.0.0.json — separate Version 2.0.0 setup and refreshed child-theme design.
+- blueprint-v1-strict.json, blueprint-v2-creative.json — generated Playground setups linked from the landing page.
+- versions/, tools/ — the sources and scripts that generate them.
+- blueprint.json, blueprint-v2.0.0.json, blueprint-v2-preview-*.json — earlier builds, kept as history.
 - index.html — landing page with two version links.
 - playground.html — direct original preview launcher.
 - docs/PROJECT-BRIEF.md — content and acceptance requirements.

@@ -1,0 +1,9 @@
+{
+ "slug": "v1-strict",
+ "title": "Careful Shopper mosquito guide, Version 1 (strict)",
+ "description": "Follows the Careful Shopper Style Sheet value by value.",
+ "theme_folder": "careful-shopper-strict",
+ "blueprint": "blueprint-v1-strict.json",
+ "option": "careful_shopper_v1_strict_3_0_0",
+ "page_title": "Keep Mosquitoes From Biting: Barrier Nets and Screens for Every Space"
+}

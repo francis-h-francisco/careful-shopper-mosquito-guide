@@ -44,3 +44,16 @@ The user explicitly corrected the assistant: the requested project is the mosqui
 - Match the source card rules: three per desktop row, one per phone row, with an optional two-column intermediate tablet layout. Stack the three layer cards below 40rem.
 - Remove the hero's extra preview CTA and the public footer note explaining internal link gaps; keep the standalone Playground launcher separate.
 - Runtime and browser checks remain open until actually tested.
+
+## 2026-11-11 — Two versions: strict and creative
+
+| Decision | Basis |
+|---|---|
+| Version 1 (strict) follows the Style Sheet value by value; Version 2 (creative) follows only the content rules and must not resemble the rough-draft HTML. | User direction, 2026-11-11. |
+| Both versions render the same copy from tools/guide_content.py. | Keeps words, products and disclosure identical. |
+| Buttons: "See Example" in Version 1, "See example on Amazon" in Version 2. | Eve: "buttons can say: See example on Amazon or See Example". |
+| The exact disclosure sits under the hero and directly above each product group in both versions. | Eve: wording is needed wherever readers might click a product link. |
+| The CDC link is removed; it is not in the Blog copy. | Blog is the content source. |
+| Links to pages outside the one-page test go to a styled "not part of the test" 404 page. | No destinations were supplied; no invented pages. |
+| Version 1 phones: below 30rem the Zone 4 photo stops floating so the text beside it never shrinks to a few words per line. | Readability at 22.5rem; the only layout deviation from the sheet. |
+| Version 2 loads Fraunces and Atkinson Hyperlegible from Google Fonts with local fallbacks; motion only under prefers-reduced-motion: no-preference. | Creative brief; accessibility. |

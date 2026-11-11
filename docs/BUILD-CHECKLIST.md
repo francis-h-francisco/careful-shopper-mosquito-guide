@@ -51,3 +51,17 @@
 ## Delivery status
 
 The source design has been restored to the canonical Blog/Style Sheet requirements and the assignment is **not yet passed for Eve**. Do not send a screenshot or claim completion until all unchecked content, asset, link and browser/runtime checks above are resolved. No submission or reply is sent by this repository.
+
+## 2026-11-11 — Strict and creative builds
+
+Done locally (tools/preview.py, Chromium, both versions):
+- [x] No page-level horizontal overflow at 1440, 1024, 768, 600 and 360 px; Version 1 table alone scrolls on phones, Version 2 table becomes cards.
+- [x] Version 1: only Verdana; only sizes 0.85, 1, 1.2, 1.333, 1.4rem; only style-sheet colors; no italics; three cards per row on desktop, one on a phone; Menu button 3rem tall; nav on one row above 60rem.
+- [x] Version 2: largest headline 2.4rem, smallest text 0.85rem; no italics; Menu button 3rem tall.
+- [x] Disclosure wording appears three times (under the hero and above both product groups) in both versions.
+- [x] No "[" or ">>" in visible text; generated plugins pass php -l; blueprints are valid JSON.
+
+Still to check in a real browser after merge to main:
+- [ ] Start both Playground links in a clean session and confirm the guide is the front page with the photo.
+- [ ] Menu by touch and keyboard (link-close, outside-click, Escape); visible focus; 200% zoom.
+- [ ] Version 2 web fonts load from Google Fonts.

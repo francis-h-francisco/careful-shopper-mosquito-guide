@@ -3,37 +3,116 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#075C37">
-<title>Careful Shopper</title>
+<meta name="theme-color" content="#173D2D">
+<meta name="description" content="Two WordPress Playground builds of the Careful Shopper mosquito protection guide: one that follows the style sheet exactly, and one creative field-guide design.">
+<title>Careful Shopper: choose a version</title>
 <style>
-:root{font-family:Verdana,Geneva,Arial,sans-serif;color:#14251C;background:#FBFAF6;line-height:1.65}
-*{box-sizing:border-box}
-body{margin:0}
-header{padding:18px max(20px,calc((100% - 1120px)/2));border-bottom:1px solid #DCE3DA}
-.brand{color:#075C37;font-size:1.15rem;font-weight:700;text-decoration:none;letter-spacing:.01em}
-main{width:min(880px,calc(100% - 32px));margin:clamp(48px,9vw,104px) auto}
-h1{font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.08;letter-spacing:-.03em;color:#075C37;margin:0 0 30px}
-.panel{margin:20px 0;padding:clamp(22px,4vw,36px);border:1px solid #DCE3DA;border-radius:22px;background:#fff;box-shadow:0 10px 30px rgba(20,37,28,.05);display:flex;align-items:center;justify-content:space-between;gap:20px}
-.version{margin:0;color:#075C37;font-size:1.2rem;font-weight:700}
-.button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 20px;background:#075C37;color:#fff;border-radius:9px;font-weight:700;text-decoration:none;white-space:nowrap}
-.button:hover{background:#06472D}
-a:focus-visible{outline:3px solid #B78B2E;outline-offset:3px}
-@media(max-width:480px){.panel{align-items:stretch;flex-direction:column}.button{width:100%}}
+:root{
+	--ink:#14231C;--pine:#173D2D;--paper:#F7F3EA;--card:#FFFDF8;--line:rgba(20,35,28,.14);
+	--amber:#F0B44C;--clay:#B5531C;--clay-dark:#8F3F13;
+	--green:#006633;--brown:#663300;--mint:#EAF3EE;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.6}
+a{color:inherit}
+a:focus-visible{outline:.1875rem solid var(--clay);outline-offset:.1875rem;border-radius:.25rem}
+.wrap{width:min(72rem,100% - 2rem);margin-inline:auto}
+header.site{background:var(--pine);color:#fff;background-image:repeating-linear-gradient(45deg,transparent 0 .6rem,rgba(255,255,255,.07) .6rem .66rem),repeating-linear-gradient(-45deg,transparent 0 .6rem,rgba(255,255,255,.07) .6rem .66rem)}
+.bar{display:flex;align-items:center;gap:.75rem;padding:1.25rem 0}
+.bar svg{width:2.5rem;height:2.5rem;flex:none}
+.bar span{font:700 1.2rem/1.2 Georgia,"Iowan Old Style",serif}
+.intro{padding:clamp(2rem,6vw,4.5rem) 0 clamp(5rem,10vw,7rem)}
+.intro h1{margin:0 0 1rem;max-width:20ch;font:700 clamp(1.9rem,1.2rem + 3vw,3rem)/1.1 Georgia,"Iowan Old Style",serif;letter-spacing:-.01em}
+.intro p{margin:0;max-width:44rem;font-size:1.1rem;color:rgba(255,255,255,.9)}
+.versions{display:grid;gap:1.5rem;margin-top:calc(-1 * clamp(3rem,7vw,4.5rem));padding-bottom:3rem}
+@media(min-width:52rem){.versions{grid-template-columns:1fr 1fr}}
+.version{display:flex;flex-direction:column;border-radius:1.25rem;overflow:hidden;background:var(--card);border:.0625rem solid var(--line);box-shadow:0 1.25rem 3rem -1.75rem rgba(20,35,28,.5)}
+.version img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:.0625rem solid var(--line)}
+.body{display:flex;flex-direction:column;gap:1rem;flex:1;padding:clamp(1.25rem,3vw,2rem)}
+.tag{align-self:flex-start;margin:0;padding:.125rem .75rem;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.version h2{margin:0;font-size:1.5rem;line-height:1.25}
+.version p{margin:0}
+.version ul{margin:0;padding-left:1.15rem;display:grid;gap:.375rem}
+.open{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;margin-top:auto;min-height:3rem;padding:.75rem 1.5rem;border-radius:.5rem;color:#fff;font-weight:700;text-decoration:none;text-align:center}
+.v1 h2,.v1 .body{font-family:Verdana,Geneva,Arial,sans-serif}
+.v1 h2{color:var(--green);font-size:1.4rem}
+.v1 .tag{background:var(--mint);color:var(--green)}
+.v1 .open{background:var(--brown)}
+.v1 .open:hover{background:#4D2600}
+.v2 h2{font-family:Georgia,"Iowan Old Style",serif;color:var(--pine)}
+.v2 .tag{background:var(--pine);color:var(--amber)}
+.v2 .open{background:var(--clay);border-radius:999px}
+.v2 .open:hover{background:var(--clay-dark)}
+.notes{padding:0 0 3rem}
+.notes .box{padding:clamp(1.25rem,3vw,2rem);border-radius:1.25rem;border:.0625rem solid var(--line);background:var(--card)}
+.notes h2{margin:0 0 .75rem;font:700 1.25rem/1.3 Georgia,serif}
+.notes p{margin:0}
+.notes p+p{margin-top:.75rem}
+.sr{position:absolute;width:.0625rem;height:.0625rem;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+footer{padding:1.5rem 0 2.5rem;font-size:.9rem;border-top:.0625rem solid var(--line)}
 </style>
 </head>
 <body>
-<header><span class="brand">Careful Shopper</span></header>
-<main>
-<section aria-label="Versions">
-<article class="panel">
-<h1 class="version">Version 1.0.0</h1>
-<a class="button" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint.json" target="_blank" rel="noopener noreferrer">Open</a>
+<header class="site">
+<div class="wrap">
+<div class="bar">
+<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#F0B44C" d="M24 2 43 9v13c0 12-8 20-19 24C13 42 5 34 5 22V9Z"/><path fill="none" stroke="#173D2D" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" d="m15 24 6.5 6.5L33 18"/></svg>
+<span>Careful Shopper</span>
+</div>
+<div class="intro">
+<h1>One mosquito guide, two WordPress builds</h1>
+<p>Both versions use the same words, the same products and the same affiliate disclosure. Version 1 follows the style sheet value by value. Version 2 keeps the content rules and takes the design somewhere new.</p>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<section class="versions" aria-label="Versions">
+<article class="version v1">
+<img src="assets/20261111-VersionOneStrictPreview.webp" width="960" height="600" alt="Version 1: green header band with the guide title, a yellow disclosure box, and a white education zone">
+<div class="body">
+<p class="tag">Version 1 · Strict</p>
+<h2>Built to the style sheet</h2>
+<p>Every value comes from the Careful Shopper Style Sheet and the blog's zone list.</p>
+<ul>
+<li>Verdana only, the listed colors only, sizes in rem</li>
+<li>Nine zones in order, one column, no sidebar</li>
+<li>Exact disclosure above every group of product links</li>
+<li>Three cards per row on desktop, one on a phone, Menu button below 60rem</li>
+</ul>
+<a class="open" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint-v1-strict.json" target="_blank" rel="noopener noreferrer">Open Version 1<span class="sr"> in WordPress Playground (new tab)</span></a>
+</div>
 </article>
-<article class="panel">
-<h2 class="version">Version 2.0.0</h2>
-<a class="button" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint-v2.0.0.json" target="_blank" rel="noopener noreferrer">Open</a>
+
+<article class="version v2">
+<img src="assets/20261111-VersionTwoCreativePreview.webp" width="960" height="600" alt="Version 2: dark pine hero with netting texture and a shield inside three rings, a contents rail, and a disclosure card">
+<div class="body">
+<p class="tag">Version 2 · Creative</p>
+<h2>A field guide design</h2>
+<p>Same content rules, freer design: a showcase of what the theme can do.</p>
+<ul>
+<li>Serif display type, pine and amber palette, a netting motif</li>
+<li>Sticky contents rail and numbered sections</li>
+<li>Specimen-style product cards with "See example on Amazon"</li>
+<li>Comparison table turns into cards on a phone, so nothing scrolls sideways</li>
+</ul>
+<a class="open" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Ffrancis-h-francisco%2Fcareful-shopper-mosquito-guide%2Fmain%2Fblueprint-v2-creative.json" target="_blank" rel="noopener noreferrer">Open Version 2<span class="sr"> in WordPress Playground (new tab)</span></a>
+</div>
 </article>
 </section>
+
+<section class="notes" aria-labelledby="notes-title">
+<div class="box">
+<h2 id="notes-title">How the previews work</h2>
+<p>Each button starts a private copy of WordPress in your browser. It takes a few seconds to load, and nothing you change there is saved or shared.</p>
+<p>Menu and footer links to pages outside this one-page test open a short page that says so.</p>
+</div>
+</section>
 </main>
+
+<footer>
+<div class="wrap">© 2026 Careful Shopper</div>
+</footer>
 </body>
 </html>
