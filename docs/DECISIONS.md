@@ -3,7 +3,7 @@
 ## Confirmed
 | Date | Decision | Basis |
 |---|---|---|
-| 2026-11-06 | Repository: careful-shopper-mosquito-guide. | User created the public repository. |
+| 2026-11-06 | Repository: careful-shopper-mosquito-guide. | User created the  public repository. |
 | 2026-11-06 | Independent test/demo, not official Careful Shopper production property. | Project boundary. |
 | 2026-11-06 | Amazon CTA is **SEE EXAMPLE**. | Latest employer direction supersedes older “View on Amazon” wording. |
 | 2026-11-06 | One near-final read-only review URL is enough; no simultaneous collaboration needed. | User's stated workflow. |
