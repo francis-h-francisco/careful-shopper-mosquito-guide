@@ -310,7 +310,7 @@ body {
 	background: var(--fg-card); border: 0.0625rem solid var(--fg-line); box-shadow: var(--fg-shadow);
 }
 .fg .fg-window {
-	position: relative; display: grid; place-items: center;
+	position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.625rem;
 	aspect-ratio: 16 / 10;
 	background-color: var(--fg-mist); background-image: var(--fg-net-dark);
 	color: var(--fg-pine); text-decoration: none;
@@ -369,6 +369,25 @@ body {
 .fg .fg-footer__nav a { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .fg .fg-footer__copy { padding-top: 1.5rem; border-top: 0.0625rem solid var(--fg-line-light); font-size: 0.9rem; }
 
+/* ---------- Line illustrations (drawn for this guide; decorative) ---------- */
+.fg-window__art { width: 3.75rem; height: 3.75rem; color: var(--fg-pine); }
+.fg .fg-window:hover .fg-window__art { color: var(--fg-clay); }
+.fg-step__art { position: absolute; right: 1.25rem; top: 1.25rem; width: 2.75rem; height: 2.75rem; color: var(--fg-moss); }
+.fg-step.is-here .fg-step__art { color: var(--fg-amber); }
+.fg-risk { position: relative; }
+.fg-risk__art { float: right; width: 4.5rem; height: 4.5rem; margin: -0.25rem 0 0.5rem 1rem; color: var(--fg-clay); }
+
+/* ---------- The closing disclosure: centered, with more room ---------- */
+.fg-disclosure--closing {
+	grid-template-columns: minmax(0, 1fr);
+	justify-items: center;
+	row-gap: 0.625rem;
+	padding: 2rem clamp(1.25rem, 4vw, 2.5rem);
+	text-align: center;
+}
+.fg-disclosure--closing::before { grid-row: auto; width: 2.5rem; height: 2.5rem; font-size: 1.3rem; }
+.fg-disclosure--closing .fg-disclosure__text { max-width: 36rem; }
+
 /* ---------- Motion, only for people who have not asked for less ---------- */
 @media (prefers-reduced-motion: no-preference) {
 	html { scroll-behavior: smooth; }
@@ -392,6 +411,7 @@ body {
 	.fg-disclosure { padding: 1.25rem; row-gap: 0.75rem; }
 	.fg-disclosure::before { grid-row: 1; }
 	.fg-disclosure .fg-disclosure__text { grid-column: 1 / -1; font-size: 1.05rem; }
+	.fg-disclosure--closing { padding: 1.75rem 1.25rem; }
 	.fg-step { padding-left: 1.25rem; padding-top: 4rem; }
 	.fg-plate::before { inset: 0.5rem -0.5rem -0.5rem 0.5rem; }
 	.fg-footer__curator { grid-template-columns: minmax(0, 1fr); }
@@ -416,6 +436,8 @@ body {
 	.fg-why__grid { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 2.5rem; align-items: start; }
 	.fg-pairs .fg-card { flex-direction: row; }
 	.fg-pairs .fg-window { flex: 0 0 38%; aspect-ratio: auto; min-height: 100%; border-bottom: 0; border-right: 0.0625rem solid var(--fg-line); }
+	.fg-pairs .fg-window__label { font-size: 0.85rem; }
+	.fg-pairs .fg-window { padding: 2.5rem 0.75rem 1rem; }
 	.fg-pairs { grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr)); }
 }
 @media (min-width: 48rem) {
@@ -445,7 +467,10 @@ body {
 	.fg-disclosure--rail { position: sticky; top: 6.5rem; padding: 1.25rem; column-gap: 0.75rem; row-gap: 0.75rem; }
 	.fg-disclosure--rail::before { grid-row: 1; }
 	.fg-disclosure--rail .fg-disclosure__text { grid-column: 1 / -1; font-size: 1rem; }
+	.fg-disclosure--closing { position: static; align-self: center; padding: 2rem 1.25rem; }
+	.fg-disclosure--closing::before { grid-row: auto; }
+	.fg-disclosure--closing .fg-disclosure__text { grid-column: auto; }
 	.fg-pairs .fg-card { flex-direction: column; }
-	.fg-pairs .fg-window { flex: none; aspect-ratio: 16 / 10; min-height: 0; border-right: 0; border-bottom: 0.0625rem solid var(--fg-line); }
+	.fg-pairs .fg-window { flex: none; aspect-ratio: 16 / 10; min-height: 0; padding: 0; border-right: 0; border-bottom: 0.0625rem solid var(--fg-line); }
 	.fg-pairs { grid-template-columns: repeat(auto-fill, minmax(min(100%, 15.5rem), 1fr)); }
 }

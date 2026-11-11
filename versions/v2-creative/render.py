@@ -9,6 +9,8 @@ import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "..", "tools"))
 import guide_content as C
+sys.path.insert(0, HERE)
+import art
 
 NEW_TAB = 'target="_blank" rel="sponsored noopener noreferrer"'
 BUTTON = "See example on Amazon"
@@ -109,7 +111,7 @@ def card(i, name, url, layer, lines, kind="specimen"):
     label = f"{BUTTON}: {name.lower()} (opens in a new tab)"
     tag = layer or "Layer 1: Block"
     return f"""<li class="fg-card fg-card--{kind}">
-<a class="fg-window" href="{url}" {NEW_TAB} tabindex="-1" aria-hidden="true"><span class="fg-window__no">No. {i:02d}</span><span class="fg-window__label">Product window</span></a>
+<a class="fg-window" href="{url}" {NEW_TAB} tabindex="-1" aria-hidden="true"><span class="fg-window__no">No. {i:02d}</span>{art.svg(art.PRODUCT_ART[name], "fg-window__art")}<span class="fg-window__label">Product window</span></a>
 <div class="fg-card__body">
 <p class="fg-tag">{tag}</p>
 <h3>{name}</h3>
@@ -127,6 +129,7 @@ def content():
                   for a, n, t in SECTIONS)
     steps = "".join(
         f'<li class="fg-step{" is-here" if here else ""}"><span class="fg-step__dot" aria-hidden="true">{k}</span>'
+        f'{art.svg(art.LAYER_ART[k - 1], "fg-step__art")}'
         f'<h3>{t}</h3><p>{d}</p>'
         f'{("<p class=\"fg-step__here\">" + C.YOU_ARE_HERE + "</p>") if here else ""}</li>'
         for k, (t, d, here) in enumerate(C.LAYERS, 1))
@@ -170,6 +173,7 @@ def content():
 <div class="fg-prose">{"".join(f"<p>{p}</p>" for p in C.WHY)}</div>
 </div>
 <div class="fg-risk">
+{art.svg("mosquito", "fg-risk__art")}
 <h3 class="fg-risk__title">{C.RISK_TITLE}</h3>
 {"".join(f"<p>{p}</p>" for p in C.RISK)}
 </div>
@@ -197,7 +201,7 @@ def content():
 {section_head("other-layers")}
 <p class="fg-shop__intro">{C.PAIRS_INTRO}</p>
 <div class="fg-shop__layout">
-{disclosure(extra=" fg-disclosure--rail")}
+{disclosure(extra=" fg-disclosure--rail fg-disclosure--closing")}
 <div class="fg-pairs__groups">{"".join(groups)}</div>
 </div>
 </section>""",
