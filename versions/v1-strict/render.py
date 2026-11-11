@@ -35,7 +35,7 @@ def header():
 <div class="cs cs-header">
 <a class="cs-skip" href="#main">Skip to the guide</a>
 <div class="cs-header__inner">
-<a class="cs-brand" href="/">{LOGO}<span class="cs-brand__name">{C.SITE_NAME}</span></a>
+<div class="cs-brand"><a class="cs-brand__logo" href="/" aria-label="{C.SITE_NAME} home">{LOGO}</a><span class="cs-brand__name">{C.SITE_NAME}</span></div>
 <nav class="cs-nav" aria-label="Main"><ul>{nav_items()}</ul></nav>
 <button class="cs-menu-button" type="button" aria-expanded="false" aria-controls="cs-menu">Menu</button>
 </div>
@@ -52,7 +52,7 @@ def footer():
 <h2 id="curated-title">{C.CURATED_TITLE}</h2>
 <p>{C.BIO}</p>
 <p><a href="{C.BIO_LINK[1]}">{C.BIO_LINK[0]}</a></p>
-<p>{C.NO_SPONSORS}</p>
+<p class="cs-pledge">{C.NO_SPONSORS}</p>
 <nav class="cs-footer-nav" aria-label="Footer"><ul>{links}</ul></nav>
 <p class="cs-copyright">{C.COPYRIGHT}</p>
 </div>

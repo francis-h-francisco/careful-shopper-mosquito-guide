@@ -199,6 +199,9 @@ body {
 /* Zone 9: curated by and footer */
 .cs-footer-nav { margin: 1.5rem 0; }
 .cs-footer-nav ul { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
+/* The no-sponsorship line: centered in its own outlined box. */
+.cs .cs-pledge { margin-top: 1.5rem; padding: 1rem 1.5rem; border: 0.0625rem solid var(--cs-page); border-radius: 0.75rem; text-align: center; font-weight: 700; }
+.cs-brand__logo { display: inline-flex; }
 .cs-copyright { padding-top: 1rem; border-top: 0.0625rem solid var(--cs-page); }
 .cs .cs-footer-nav + .cs-copyright { margin-top: 0; }
 

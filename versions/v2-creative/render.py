@@ -61,7 +61,7 @@ def header():
 <div class="fg fg-header">
 <a class="fg-skip" href="#main">Skip to the guide</a>
 <div class="fg-header__bar">
-<a class="fg-brand" href="/">{MARK}<span class="fg-brand__text"><span class="fg-brand__name">{C.SITE_NAME}</span><span class="fg-brand__tag">{C.TAGLINE}</span></span></a>
+<div class="fg-brand"><a class="fg-brand__logo" href="/" aria-label="{C.SITE_NAME} home">{MARK}</a><span class="fg-brand__text"><span class="fg-brand__name">{C.SITE_NAME}</span><span class="fg-brand__tag">{C.TAGLINE}</span></span></div>
 <nav class="fg-nav" aria-label="Main"><ul>{nav_items()}</ul></nav>
 <button class="fg-menu-button" type="button" aria-expanded="false" aria-controls="fg-menu"><span class="fg-menu-button__bars" aria-hidden="true"></span>Menu</button>
 </div>
